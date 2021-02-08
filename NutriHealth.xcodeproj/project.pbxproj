@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18F866FE25D0E7D500C9C881 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 18F866FD25D0E7D500C9C881 /* PythonKit */; };
 		EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */; };
 		EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F325CFB9E3001EEB6A /* ContentView.swift */; };
 		EB57C1F625CFB9E5001EEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F866FE25D0E7D500C9C881 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +86,6 @@
 			);
 			name = NutriHealth;
 			packageProductDependencies = (
-				18F866FD25D0E7D500C9C881 /* PythonKit */,
 			);
 			productName = NutriHealth;
 			productReference = EB57C1EE25CFB9E3001EEB6A /* NutriHealth.app */;
@@ -118,7 +115,6 @@
 			);
 			mainGroup = EB57C1E525CFB9E3001EEB6A;
 			packageReferences = (
-				18F866FC25D0E7D400C9C881 /* XCRemoteSwiftPackageReference "PythonKit" */,
 			);
 			productRefGroup = EB57C1EF25CFB9E3001EEB6A /* Products */;
 			projectDirPath = "";
@@ -336,25 +332,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		18F866FC25D0E7D400C9C881 /* XCRemoteSwiftPackageReference "PythonKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pvieito/PythonKit.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		18F866FD25D0E7D500C9C881 /* PythonKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 18F866FC25D0E7D400C9C881 /* XCRemoteSwiftPackageReference "PythonKit" */;
-			productName = PythonKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EB57C1E625CFB9E3001EEB6A /* Project object */;
 }
