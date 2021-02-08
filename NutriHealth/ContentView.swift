@@ -11,17 +11,44 @@ let Gray1 = Color(red: 0.96, green: 0.96, blue: 0.96, opacity: 1.0)
 let Gray2 = Color(red: 0.91, green: 0.91, blue: 0.91, opacity: 1.0)
 let Blue = Color(red: 0.18, green: 0.5, blue: 0.93, opacity: 1.0)
 
+let testUsername = "test"
+let testPassword = "test123"
+
 struct ContentView: View {
     
     @State var username: String = ""
     @State var password: String = ""
+    @State var LoginFailed:Bool = false
+    @State var LoginSucceeded:Bool = false
+    
     var body: some View {
         VStack {
             Logo()
             EmailTextField(username: $username)
             PasswordTextField(password: $password)
-        
-            Button(action: {print("Button Clicked")}) {
+           
+            //Feedback Message
+            if LoginFailed{
+                Text("Login Failed. Try Again.")
+                    .padding()
+                    .foregroundColor(.red)
+            }
+            if LoginSucceeded{
+                Text("Successfully Logged in")
+                    .padding()
+                    .foregroundColor(.green)
+            }
+            
+            //Login Button Action
+            Button(action: {
+                //User Authentication
+                if self.username == testUsername && self.password == testPassword{
+                    self.LoginFailed = false
+                    self.LoginSucceeded = true
+                } else{
+                    self.LoginFailed = true
+                }
+            }) {
                 LoginButtonText()
                 .padding()
             }
