@@ -1,3 +1,6 @@
 [submodule "NutriHealth/NutriHealth/Backend"]
 	path = NutriHealth/NutriHealth/Backend
 	url = https://github.com/anmol-s/NutriHealth
+[submodule "Backend"]
+	path = Backend
+	url = https://github.com/anmol-s/NutriHealth
