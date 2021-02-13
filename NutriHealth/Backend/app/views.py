@@ -1,6 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Account
+from .models import User
+from .serializers import AccountSerializer
+from .serializers import UserSerializer
+from rest_framework import viewsets
 import requests
 import os
 import psycopg2
@@ -23,3 +27,14 @@ def db(request):
     accounts = Account.objects.all()
     
     return render(request, "db.html", {"accounts":accounts})
+
+# ModelViewSet handles GET and POST for Account - the connected router class (in urls.py) will handle functions for: list, create, retrieve, update, partial_update, destroy
+class AccountViewSet(viewsets.ModelViewSet):
+    queryset = Account.objects.all().order_by('username')
+    serializer_class = AccountSerializer
+
+
+# ModelViewSet handles GET and POST for User - the connected router class (in urls.py) will handle functions for: list, create, retrieve, update, partial_update, destroy
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all().order_by('username')
+    serializer_class = UserSerializer
