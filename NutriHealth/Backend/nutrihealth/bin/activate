@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/Victoria/Desktop/Winter2021/CS125/NutriHealth/NutriHealth/Python/example heroku/nutrihealth"
+VIRTUAL_ENV="/Users/Victoria/Desktop/Winter2021/CS125/NutriHealth/NutriHealth/Backend/nutrihealth"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

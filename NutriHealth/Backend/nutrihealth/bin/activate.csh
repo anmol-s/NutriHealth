@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/Users/Victoria/Desktop/Winter2021/CS125/NutriHealth/NutriHealth/Python/example heroku/nutrihealth"
+setenv VIRTUAL_ENV "/Users/Victoria/Desktop/Winter2021/CS125/NutriHealth/NutriHealth/Backend/nutrihealth"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/Victoria/Desktop/Winter2021/CS125/NutriHealth/NutriHealth/Python/example heroku/nutrihealth"
+set -gx VIRTUAL_ENV "/Users/Victoria/Desktop/Winter2021/CS125/NutriHealth/NutriHealth/Backend/nutrihealth"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
