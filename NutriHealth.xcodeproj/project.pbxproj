@@ -13,6 +13,7 @@
 		18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B425DE516B00CEA370 /* ViewRouter.swift */; };
 		18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B825DE5CB500CEA370 /* ReportView.swift */; };
 		18D1C2BD25DE5CC300CEA370 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */; };
+		18D1C2C025DE5E5000CEA370 /* HostingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */; };
 		EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */; };
 		EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F325CFB9E3001EEB6A /* ContentView.swift */; };
 		EB57C1F625CFB9E5001EEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		18D1C2B425DE516B00CEA370 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		18D1C2B825DE5CB500CEA370 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostingTabBar.swift; path = NavBarViews/HostingTabBar.swift; sourceTree = "<group>"; };
 		EB57C1EE25CFB9E3001EEB6A /* NutriHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriHealthApp.swift; sourceTree = "<group>"; };
 		EB57C1F325CFB9E3001EEB6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		EB57C1F025CFB9E3001EEB6A /* NutriHealth */ = {
 			isa = PBXGroup;
 			children = (
+				18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */,
 				EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */,
 				183A232325DE48CC000C9732 /* Helper.swift */,
 				EB57C1F325CFB9E3001EEB6A /* ContentView.swift */,
@@ -172,6 +175,7 @@
 				183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */,
 				183A232125DE45EB000C9732 /* MotherView.swift in Sources */,
 				183A232425DE48CC000C9732 /* Helper.swift in Sources */,
+				18D1C2C025DE5E5000CEA370 /* HostingTabBar.swift in Sources */,
 				18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */,
 				18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */,
 				EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */,

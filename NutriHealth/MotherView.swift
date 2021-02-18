@@ -17,7 +17,7 @@ struct MotherView: View {
             ContentView(viewRouter: viewRouter)
         case .page2:
         //Home Page
-            HomeView(viewRouter: viewRouter)
+            HostingTabBar(viewRouter: viewRouter)
         }
 
     }
