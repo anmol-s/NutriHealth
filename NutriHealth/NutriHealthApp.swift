@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct NutriHealthApp: App {
+    @StateObject var viewRouter = ViewRouter()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MotherView(viewRouter: viewRouter) //the page that handles all Navigation
         }
     }
 }
