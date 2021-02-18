@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A231925DE3B8E000C9732 /* HomeView.swift */; };
+		183A232125DE45EB000C9732 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A232025DE45EB000C9732 /* MotherView.swift */; };
 		EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */; };
 		EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F325CFB9E3001EEB6A /* ContentView.swift */; };
 		EB57C1F625CFB9E5001EEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183A231925DE3B8E000C9732 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		183A232025DE45EB000C9732 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		EB57C1EE25CFB9E3001EEB6A /* NutriHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriHealthApp.swift; sourceTree = "<group>"; };
 		EB57C1F325CFB9E3001EEB6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */,
 				EB57C1F325CFB9E3001EEB6A /* ContentView.swift */,
+				183A231925DE3B8E000C9732 /* HomeView.swift */,
+				183A232025DE45EB000C9732 /* MotherView.swift */,
 				EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */,
 				EB57C1FA25CFB9E5001EEB6A /* Info.plist */,
 				EB57C1F725CFB9E5001EEB6A /* Preview Content */,
@@ -142,6 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */,
+				183A232125DE45EB000C9732 /* MotherView.swift in Sources */,
 				EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */,
 				EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */,
 			);
