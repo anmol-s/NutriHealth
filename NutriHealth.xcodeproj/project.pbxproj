@@ -30,7 +30,7 @@
 		18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostingTabBar.swift; path = NavBarViews/HostingTabBar.swift; sourceTree = "<group>"; };
 		EB57C1EE25CFB9E3001EEB6A /* NutriHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriHealthApp.swift; sourceTree = "<group>"; };
-		EB57C1F325CFB9E3001EEB6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB57C1F325CFB9E3001EEB6A /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB57C1F825CFB9E5001EEB6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB57C1FA25CFB9E5001EEB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };

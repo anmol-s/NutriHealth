@@ -70,10 +70,17 @@ struct ContentView_Previews: PreviewProvider {
 
 struct Logo: View {
     var body: some View {
-        Text("NutriHealth")
-            .font(.title)
-            .fontWeight(.semibold)
-            .padding(.bottom, 40.0)
+        Image("dumbbell")
+                    .resizable()
+                    .frame(width: 150.0, height: 150.0)
+                    .scaledToFit()
+                    .padding(.top, -150.0)
+        
+        Image("NutriHealthName")
+                    .resizable()
+                    .frame(width: 300.0, height: 50.0)
+                    .scaledToFit()
+                    .padding(.bottom, 50.0)
     }
 }
 
@@ -94,6 +101,7 @@ struct EmailTextField: View {
     var body: some View {
         TextField("Email", text: $username)
             .padding()
+            .frame(width: 360, height: 51)
             .background(Gray1)
             .cornerRadius(8.0)
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(Gray2, lineWidth: 1))
@@ -105,6 +113,7 @@ struct PasswordTextField: View {
     var body: some View {
         SecureField("Password", text: $password)
             .padding()
+            .frame(width: 360, height: 51)
             .background(Gray1)
             .cornerRadius(8.0)
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(Gray2, lineWidth: 1))
