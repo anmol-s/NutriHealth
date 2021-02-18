@@ -19,6 +19,7 @@ struct ContentView: View {
     
     @State var username: String = ""
     @State var password: String = ""
+    @State var hidden:Bool = false
     @State var LoginFailed:Bool = false
     @State var LoginSucceeded:Bool = false
     
@@ -26,7 +27,7 @@ struct ContentView: View {
         VStack {
             Logo()
             EmailTextField(username: $username)
-            PasswordTextField(password: $password)
+            PasswordTextField(password: $password, hidden: $hidden)
            
             //Feedback Message
             if LoginFailed{
@@ -105,17 +106,34 @@ struct EmailTextField: View {
             .background(Gray1)
             .cornerRadius(8.0)
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(Gray2, lineWidth: 1))
+            .padding([.leading, .trailing])
     }
 }
 
 struct PasswordTextField: View {
     @Binding var password:String
+    @Binding var hidden:Bool
     var body: some View {
-        SecureField("Password", text: $password)
-            .padding()
-            .frame(width: 360, height: 51)
-            .background(Gray1)
-            .cornerRadius(8.0)
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Gray2, lineWidth: 1))
+        ZStack {
+            HStack {
+                if self.hidden {
+                    TextField("Password", text: $password)
+                        .padding()
+                        .frame(width: 360, height: 51)
+                        .background(Gray1)
+                        .cornerRadius(8.0)
+                } else {
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .frame(width: 360, height: 51)
+                        .background(Gray1)
+                        .cornerRadius(8.0)
+                }
+            }.padding([.leading, .trailing]) // HStack
+            Button(action: {self.hidden.toggle()})
+            {
+                Image(systemName: self.hidden ? "eye.fill": "eye.slash.fill").foregroundColor((self.hidden == true) ? Color.green : Color.secondary)
+            }.offset(x: 150.0, y:0.0)
+        } // ZStack
     }
 }
