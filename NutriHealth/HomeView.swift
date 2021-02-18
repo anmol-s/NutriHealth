@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
-
+//This is the home page
 struct HomeView: View {
+    @StateObject var viewRouter = ViewRouter()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello Page")
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewRouter: ViewRouter())
     }
 }

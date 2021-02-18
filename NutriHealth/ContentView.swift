@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
-
+//This is the Login Page
 let Gray1 = Color(red: 0.96, green: 0.96, blue: 0.96, opacity: 1.0)
 let Gray2 = Color(red: 0.91, green: 0.91, blue: 0.91, opacity: 1.0)
 let Blue = Color(red: 0.18, green: 0.5, blue: 0.93, opacity: 1.0)
 
-let testUsername = "test"
-let testPassword = "test123"
+let testUsername = "Test"
+let testPassword = "Test123"
 
 struct ContentView: View {
+    @StateObject var viewRouter = ViewRouter()
     
     @State var username: String = ""
     @State var password: String = ""
@@ -45,6 +46,7 @@ struct ContentView: View {
                 if self.username == testUsername && self.password == testPassword{
                     self.LoginFailed = false
                     self.LoginSucceeded = true
+                    viewRouter.currentPage = .page2
                 } else{
                     self.LoginFailed = true
                 }
@@ -60,7 +62,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            ContentView(viewRouter: ViewRouter())
         }
             
     }

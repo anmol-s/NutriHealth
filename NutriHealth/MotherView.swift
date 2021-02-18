@@ -6,15 +6,25 @@
 //
 
 import SwiftUI
-
+//This page keeps track of all the pages and navigation
 struct MotherView: View {
+    @StateObject var viewRouter: ViewRouter
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        switch viewRouter.currentPage{
+        case .page1:
+        //Login Page
+            ContentView(viewRouter: viewRouter)
+        case .page2:
+        //Home Page
+            HomeView(viewRouter: viewRouter)
+        }
+
     }
 }
 
 struct MotherView_Previews: PreviewProvider {
     static var previews: some View {
-        MotherView()
+        MotherView(viewRouter: ViewRouter())
     }
 }
