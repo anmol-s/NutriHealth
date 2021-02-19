@@ -3,17 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A231925DE3B8E000C9732 /* HomeView.swift */; };
 		183A232125DE45EB000C9732 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A232025DE45EB000C9732 /* MotherView.swift */; };
 		183A232425DE48CC000C9732 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A232325DE48CC000C9732 /* Helper.swift */; };
+		184141C225DF71FB00AB96FA /* RecoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184141C125DF71FB00AB96FA /* RecoRow.swift */; };
+		184141C525DF796F00AB96FA /* DailyIntakeColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */; };
 		18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B425DE516B00CEA370 /* ViewRouter.swift */; };
 		18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B825DE5CB500CEA370 /* ReportView.swift */; };
 		18D1C2BD25DE5CC300CEA370 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */; };
 		18D1C2C025DE5E5000CEA370 /* HostingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */; };
+		DA33216CB13AA4BF43CF60AF /* Pods_NutriHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F877FB3F2D859EFA539E682 /* Pods_NutriHealth.framework */; };
 		EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */; };
 		EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F325CFB9E3001EEB6A /* ContentView.swift */; };
 		EB57C1F625CFB9E5001EEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */; };
@@ -21,13 +24,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06B8BFBC96F9C25FF4930B84 /* Pods-NutriHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutriHealth.debug.xcconfig"; path = "Target Support Files/Pods-NutriHealth/Pods-NutriHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		183A231925DE3B8E000C9732 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		183A232025DE45EB000C9732 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		183A232325DE48CC000C9732 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		184141C125DF71FB00AB96FA /* RecoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoRow.swift; sourceTree = "<group>"; };
+		184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeColumn.swift; sourceTree = "<group>"; };
 		18D1C2B425DE516B00CEA370 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		18D1C2B825DE5CB500CEA370 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostingTabBar.swift; path = NavBarViews/HostingTabBar.swift; sourceTree = "<group>"; };
+		1F877FB3F2D859EFA539E682 /* Pods_NutriHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutriHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81460B03877F28D6EA5DFC55 /* Pods-NutriHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutriHealth.release.xcconfig"; path = "Target Support Files/Pods-NutriHealth/Pods-NutriHealth.release.xcconfig"; sourceTree = "<group>"; };
 		EB57C1EE25CFB9E3001EEB6A /* NutriHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriHealthApp.swift; sourceTree = "<group>"; };
 		EB57C1F325CFB9E3001EEB6A /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -41,12 +49,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA33216CB13AA4BF43CF60AF /* Pods_NutriHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184141C725DF7D8200AB96FA /* HomeViewContent */ = {
+			isa = PBXGroup;
+			children = (
+				184141C125DF71FB00AB96FA /* RecoRow.swift */,
+				184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */,
+			);
+			path = HomeViewContent;
+			sourceTree = "<group>";
+		};
 		18D1C2B725DE5C6700CEA370 /* NavBarViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,11 +75,30 @@
 			path = NavBarViews;
 			sourceTree = "<group>";
 		};
+		26626DD68A5E276BB62D6A70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F877FB3F2D859EFA539E682 /* Pods_NutriHealth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BE37EE551A731C7D7C23804 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06B8BFBC96F9C25FF4930B84 /* Pods-NutriHealth.debug.xcconfig */,
+				81460B03877F28D6EA5DFC55 /* Pods-NutriHealth.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EB57C1E525CFB9E3001EEB6A = {
 			isa = PBXGroup;
 			children = (
 				EB57C1F025CFB9E3001EEB6A /* NutriHealth */,
 				EB57C1EF25CFB9E3001EEB6A /* Products */,
+				4BE37EE551A731C7D7C23804 /* Pods */,
+				26626DD68A5E276BB62D6A70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +113,7 @@
 		EB57C1F025CFB9E3001EEB6A /* NutriHealth */ = {
 			isa = PBXGroup;
 			children = (
+				184141C725DF7D8200AB96FA /* HomeViewContent */,
 				18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */,
 				EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */,
 				183A232325DE48CC000C9732 /* Helper.swift */,
@@ -105,17 +143,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB57C1FD25CFB9E5001EEB6A /* Build configuration list for PBXNativeTarget "NutriHealth" */;
 			buildPhases = (
+				2D37E0DB00B29342200CCD13 /* [CP] Check Pods Manifest.lock */,
 				EB57C1EA25CFB9E3001EEB6A /* Sources */,
 				EB57C1EB25CFB9E3001EEB6A /* Frameworks */,
 				EB57C1EC25CFB9E3001EEB6A /* Resources */,
+				554DE30D90C7654F5F8093D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NutriHealth;
-			packageProductDependencies = (
-			);
 			productName = NutriHealth;
 			productReference = EB57C1EE25CFB9E3001EEB6A /* NutriHealth.app */;
 			productType = "com.apple.product-type.application";
@@ -143,8 +181,6 @@
 				Base,
 			);
 			mainGroup = EB57C1E525CFB9E3001EEB6A;
-			packageReferences = (
-			);
 			productRefGroup = EB57C1EF25CFB9E3001EEB6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,6 +202,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D37E0DB00B29342200CCD13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NutriHealth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		554DE30D90C7654F5F8093D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutriHealth/Pods-NutriHealth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutriHealth/Pods-NutriHealth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NutriHealth/Pods-NutriHealth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB57C1EA25CFB9E3001EEB6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -174,7 +252,9 @@
 				18D1C2BD25DE5CC300CEA370 /* ProfileView.swift in Sources */,
 				183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */,
 				183A232125DE45EB000C9732 /* MotherView.swift in Sources */,
+				184141C225DF71FB00AB96FA /* RecoRow.swift in Sources */,
 				183A232425DE48CC000C9732 /* Helper.swift in Sources */,
+				184141C525DF796F00AB96FA /* DailyIntakeColumn.swift in Sources */,
 				18D1C2C025DE5E5000CEA370 /* HostingTabBar.swift in Sources */,
 				18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */,
 				18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */,
@@ -304,6 +384,7 @@
 		};
 		EB57C1FE25CFB9E5001EEB6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B8BFBC96F9C25FF4930B84 /* Pods-NutriHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,6 +407,7 @@
 		};
 		EB57C1FF25CFB9E5001EEB6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81460B03877F28D6EA5DFC55 /* Pods-NutriHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

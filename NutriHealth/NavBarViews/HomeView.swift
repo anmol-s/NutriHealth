@@ -6,17 +6,21 @@
 //
 
 import SwiftUI
+
 //This is the home page
 struct HomeView: View {
-//    @StateObject var viewRouter = ViewRouter()
+    
     var body: some View {
-        Text("Home Page")
+        VStack{
+            Text("// Insert Dates").font(.title)
+            RecoRow(items: ["Reco1","Reco2"])
+            DailyIntakeColumn(items: ["1","2"])
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-//        HomeView(viewRouter: ViewRouter())
         HomeView()
     }
 }
