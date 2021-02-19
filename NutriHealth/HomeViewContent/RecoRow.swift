@@ -25,7 +25,7 @@ struct RecoRow: View {
                     Text("Reco2 ")
                     Text("Reco3 ")
                     Text("Reco4 ")
-                }
+                }.padding()
             }
             .frame(height: 185)
         }

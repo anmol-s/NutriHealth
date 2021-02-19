@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 //This is the home page
 struct HomeView: View {
     

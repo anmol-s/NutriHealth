@@ -59,8 +59,8 @@
 		184141C725DF7D8200AB96FA /* HomeViewContent */ = {
 			isa = PBXGroup;
 			children = (
-				184141C125DF71FB00AB96FA /* RecoRow.swift */,
 				184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */,
+				184141C125DF71FB00AB96FA /* RecoRow.swift */,
 			);
 			path = HomeViewContent;
 			sourceTree = "<group>";
