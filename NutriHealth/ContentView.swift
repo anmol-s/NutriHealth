@@ -56,13 +56,6 @@ struct ContentView: View {
                   }
                 }
                 
-//                if self.username == testUsername && self.password == testPassword{
-//                    self.LoginFailed = false
-//                    self.LoginSucceeded = true
-//                    viewRouter.currentPage = .page2
-//                } else{
-//                    self.LoginFailed = true
-//                }
             }) {
                 LoginButtonText()
                 .padding()
@@ -71,8 +64,8 @@ struct ContentView: View {
         .padding(20.0)
         .onAppear(){
             print("view appeared")
-            //comment the below line if implementing the signup feature
-            self.createTestUser()
+            //uncomment the below line if test user NOT already created
+            //self.createTestUser()
         }
     }
     func createTestUser(){
