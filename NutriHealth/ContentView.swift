@@ -6,13 +6,11 @@
 //
 
 import SwiftUI
+import Parse
 //This is the Login Page
 let Gray1 = Color(red: 0.96, green: 0.96, blue: 0.96, opacity: 1.0)
 let Gray2 = Color(red: 0.91, green: 0.91, blue: 0.91, opacity: 1.0)
 let Blue = Color(red: 0.18, green: 0.5, blue: 0.93, opacity: 1.0)
-
-let testUsername = "Test"
-let testPassword = "Test123"
 
 struct ContentView: View {
     @StateObject var viewRouter = ViewRouter()
@@ -43,20 +41,57 @@ struct ContentView: View {
             
             //Login Button Action
             Button(action: {
+                self.createTestUser()
                 //User Authentication
-                if self.username == testUsername && self.password == testPassword{
+                PFUser.logInWithUsername(inBackground:self.username, password:self.password) {
+                  (user: PFUser?, error: Error?) -> Void in
+                  if user != nil {
+                    // Do stuff after successful login.
                     self.LoginFailed = false
                     self.LoginSucceeded = true
                     viewRouter.currentPage = .page2
-                } else{
+                  } else {
+                    // The login failed. Check error to see why.
                     self.LoginFailed = true
+                  }
                 }
+                
+//                if self.username == testUsername && self.password == testPassword{
+//                    self.LoginFailed = false
+//                    self.LoginSucceeded = true
+//                    viewRouter.currentPage = .page2
+//                } else{
+//                    self.LoginFailed = true
+//                }
             }) {
                 LoginButtonText()
                 .padding()
             }
         }
         .padding(20.0)
+        .onAppear(){
+            print("view appeared")
+            //comment the below line if implementing the signup feature
+            self.createTestUser()
+        }
+    }
+    func createTestUser(){
+        print("creating Test user...")
+        var user = PFUser()
+          user.username = "Test"
+          user.password = "Test123"
+          user.email = "email@example.com"
+
+          user.signUpInBackground {
+            (succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+              let errorString = error.localizedDescription
+              // Show the errorString somewhere and let the user try again.
+            } else {
+              // Hooray! Let them use the app now.
+                print("Test user created")
+            }
+          }
     }
 }
 

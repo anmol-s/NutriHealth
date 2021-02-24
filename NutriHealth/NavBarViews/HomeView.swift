@@ -8,7 +8,7 @@
 import SwiftUI
 //This is the home page
 struct HomeView: View {
-    
+
     var body: some View {
         VStack{
             Text("// Insert Dates").font(.title)

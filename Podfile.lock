@@ -1,16 +1,22 @@
 PODS:
-  - DSSwiftUIKit (1.1.0)
+  - Bolts/Tasks (1.9.1)
+  - Parse (1.19.1):
+    - Parse/Core (= 1.19.1)
+  - Parse/Core (1.19.1):
+    - Bolts/Tasks (= 1.9.1)
 
 DEPENDENCIES:
-  - DSSwiftUIKit
+  - Parse
 
 SPEC REPOS:
   trunk:
-    - DSSwiftUIKit
+    - Bolts
+    - Parse
 
 SPEC CHECKSUMS:
-  DSSwiftUIKit: b5931753b2694b2418b9eb59a672dc7fb38ee0dd
+  Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  Parse: e40fdb9c7d665823b7fe9865949cac9a53eb2ce7
 
-PODFILE CHECKSUM: 7f83ca2b2370005805f5ffb0798e0cee157ca44c
+PODFILE CHECKSUM: 7a2c725ec3a66294287761c7aba11efd9fda5c76
 
 COCOAPODS: 1.10.1

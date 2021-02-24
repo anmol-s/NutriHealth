@@ -6,5 +6,5 @@ target 'NutriHealth' do
   use_frameworks!
 
   # Pods for NutriHealth
-  pod 'DSSwiftUIKit'
+  pod 'Parse'
 end
