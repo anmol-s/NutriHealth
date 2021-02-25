@@ -10,16 +10,15 @@ import Parse
 //This is the Login Page
 let Gray1 = Color(red: 0.96, green: 0.96, blue: 0.96, opacity: 1.0)
 let Gray2 = Color(red: 0.91, green: 0.91, blue: 0.91, opacity: 1.0)
-let Blue = Color(red: 0.18, green: 0.5, blue: 0.93, opacity: 1.0)
 
 struct ContentView: View {
     @StateObject var viewRouter = ViewRouter()
     
     @State var username: String = ""
     @State var password: String = ""
-    @State var hidden:Bool = false
-    @State var LoginFailed:Bool = false
-    @State var LoginSucceeded:Bool = false
+    @State var hidden: Bool = false
+    @State var LoginFailed: Bool = false
+    @State var LoginSucceeded: Bool = false
     
     var body: some View {
         VStack {
@@ -120,7 +119,7 @@ struct LoginButtonText: View {
             .foregroundColor(.white)
             .padding()
             .frame(width: 343, height: 51)
-            .background(Blue)
+            .background(Color.blue)
             .cornerRadius(100.0)
     }
 }

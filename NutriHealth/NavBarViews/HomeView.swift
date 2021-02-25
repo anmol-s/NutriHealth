@@ -14,6 +14,7 @@ struct HomeView: View {
             Text("// Insert Dates").font(.title)
             RecoRow(items: ["Reco1","Reco2"])
             DailyIntakeColumn(items: ["1","2"])
+            Spacer()
         }
     }
 }

@@ -12,6 +12,9 @@
 		183A232425DE48CC000C9732 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A232325DE48CC000C9732 /* Helper.swift */; };
 		184141C225DF71FB00AB96FA /* RecoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184141C125DF71FB00AB96FA /* RecoRow.swift */; };
 		184141C525DF796F00AB96FA /* DailyIntakeColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */; };
+		1841421725E7067800AB96FA /* GoalsColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1841421625E7067800AB96FA /* GoalsColumn.swift */; };
+		1841421A25E7078E00AB96FA /* GoalsColumnItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1841421925E7078E00AB96FA /* GoalsColumnItem.swift */; };
+		1841421D25E765B700AB96FA /* ProfileColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1841421C25E765B700AB96FA /* ProfileColumn.swift */; };
 		18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B425DE516B00CEA370 /* ViewRouter.swift */; };
 		18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B825DE5CB500CEA370 /* ReportView.swift */; };
 		18D1C2BD25DE5CC300CEA370 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */; };
@@ -30,6 +33,9 @@
 		183A232325DE48CC000C9732 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		184141C125DF71FB00AB96FA /* RecoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoRow.swift; sourceTree = "<group>"; };
 		184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeColumn.swift; sourceTree = "<group>"; };
+		1841421625E7067800AB96FA /* GoalsColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsColumn.swift; sourceTree = "<group>"; };
+		1841421925E7078E00AB96FA /* GoalsColumnItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsColumnItem.swift; sourceTree = "<group>"; };
+		1841421C25E765B700AB96FA /* ProfileColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColumn.swift; sourceTree = "<group>"; };
 		18D1C2B425DE516B00CEA370 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		18D1C2B825DE5CB500CEA370 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -63,6 +69,16 @@
 				184141C125DF71FB00AB96FA /* RecoRow.swift */,
 			);
 			path = HomeViewContent;
+			sourceTree = "<group>";
+		};
+		1841421525E705E600AB96FA /* ProfileViewContent */ = {
+			isa = PBXGroup;
+			children = (
+				1841421625E7067800AB96FA /* GoalsColumn.swift */,
+				1841421925E7078E00AB96FA /* GoalsColumnItem.swift */,
+				1841421C25E765B700AB96FA /* ProfileColumn.swift */,
+			);
+			path = ProfileViewContent;
 			sourceTree = "<group>";
 		};
 		18D1C2B725DE5C6700CEA370 /* NavBarViews */ = {
@@ -113,6 +129,7 @@
 		EB57C1F025CFB9E3001EEB6A /* NutriHealth */ = {
 			isa = PBXGroup;
 			children = (
+				1841421525E705E600AB96FA /* ProfileViewContent */,
 				184141C725DF7D8200AB96FA /* HomeViewContent */,
 				18D1C2BF25DE5E5000CEA370 /* HostingTabBar.swift */,
 				EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */,
@@ -253,9 +270,12 @@
 				183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */,
 				183A232125DE45EB000C9732 /* MotherView.swift in Sources */,
 				184141C225DF71FB00AB96FA /* RecoRow.swift in Sources */,
+				1841421725E7067800AB96FA /* GoalsColumn.swift in Sources */,
+				1841421A25E7078E00AB96FA /* GoalsColumnItem.swift in Sources */,
 				183A232425DE48CC000C9732 /* Helper.swift in Sources */,
 				184141C525DF796F00AB96FA /* DailyIntakeColumn.swift in Sources */,
 				18D1C2C025DE5E5000CEA370 /* HostingTabBar.swift in Sources */,
+				1841421D25E765B700AB96FA /* ProfileColumn.swift in Sources */,
 				18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */,
 				18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */,
 				EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */,
