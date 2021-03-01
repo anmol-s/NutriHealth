@@ -40,7 +40,7 @@ struct ContentView: View {
             
             //Login Button Action
             Button(action: {
-                self.createTestUser()
+                //self.createTestUser()
                 //User Authentication
                 PFUser.logInWithUsername(inBackground:self.username, password:self.password) {
                   (user: PFUser?, error: Error?) -> Void in
@@ -65,11 +65,12 @@ struct ContentView: View {
             print("view appeared")
             //uncomment the below line if test user NOT already created
             //self.createTestUser()
+            self.createTestPersonalModel()
         }
     }
     func createTestUser(){
         print("creating Test user...")
-        var user = PFUser()
+        let user = PFUser()
           user.username = "Test"
           user.password = "Test123"
           user.email = "email@example.com"
@@ -78,12 +79,35 @@ struct ContentView: View {
             (succeeded: Bool, error: Error?) -> Void in
             if let error = error {
               let errorString = error.localizedDescription
-              // Show the errorString somewhere and let the user try again.
+              print(errorString)
+                // Show the errorString somewhere and let the user try again.
             } else {
               // Hooray! Let them use the app now.
                 print("Test user created")
             }
           }
+    }
+    
+    func createTestPersonalModel(){
+        print("creating Test personal model...")
+        
+        let personalModel = PFObject(className: "PersonalModel")
+        personalModel.setObject("Test", forKey: "username")
+        personalModel.setObject(100, forKey: "weight")
+        personalModel.setObject(100, forKey: "height")
+        personalModel.setObject("vitamin d", forKey: "deficiencies")
+        personalModel.setObject("vegan", forKey: "dietaryRestrictions")
+        personalModel.setObject(PFUser.current(), forKey: "user")
+        
+        personalModel.saveInBackground{
+            (succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+              let errorString = error.localizedDescription
+              print(errorString)
+            } else {
+                print("Test personal model created")
+            }
+        }
     }
 }
 
