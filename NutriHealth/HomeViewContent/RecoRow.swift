@@ -10,13 +10,15 @@ import SwiftUI
 struct RecoRow: View {
     var items: [String]
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading)
+        {
             Text("Recommendations")
                 .font(.headline)
                 .padding(.leading, 15)
                 .padding(.top, 5)
             
-            ScrollView(.horizontal, showsIndicators: false){
+            ScrollView(.horizontal, showsIndicators: false)
+            {
                 HStack(alignment: .top, spacing: 0) {
                     //TODO: Add reco item file and loop here
                     
@@ -25,9 +27,8 @@ struct RecoRow: View {
                     Text("Reco2 ")
                     Text("Reco3 ")
                     Text("Reco4 ")
-                }.padding()
-            }
-            .frame(height: 185)
+                }.font(.system(size: 15.0)).padding()
+            }.frame(height: 100)
         }
     }
 }

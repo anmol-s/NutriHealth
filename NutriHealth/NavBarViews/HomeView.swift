@@ -8,12 +8,20 @@
 import SwiftUI
 //This is the home page
 struct HomeView: View {
+    
+    init(){
+        UISegmentedControl.appearance().selectedSegmentTintColor = .systemBlue
+        UISegmentedControl.appearance().backgroundColor = UIColor.white
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+    }
 
     var body: some View {
-        VStack{
-            Text("// Insert Dates").font(.title)
-            RecoRow(items: ["Reco1","Reco2"])
-            DailyIntakeColumn(items: ["1","2"])
+        VStack
+        {
+            Text("Home").font(.title)
+            CalendarView()
+            RecoRow(items: ["Reco1","Reco2"]).offset(y:-150)
+            DailyIntakeColumn(items: ["1","2"]).offset(y:-150)
             Spacer()
         }
     }

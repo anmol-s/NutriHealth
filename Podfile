@@ -7,4 +7,7 @@ target 'NutriHealth' do
 
   # Pods for NutriHealth
   pod 'Parse'
+
+pod 'FSCalendar'
+
 end

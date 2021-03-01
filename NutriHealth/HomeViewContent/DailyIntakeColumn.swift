@@ -16,16 +16,54 @@ struct DailyIntakeColumn: View {
                 .padding(.leading, 15)
                 .padding(.top, 5)
             
-            List{
+            List
+            {
                     //TODO: Add daily intake item file and loop here
                     
                     //TODO: Test data Remove after adding above
+                
+                Group // Calories
+                {
                     Text("Calories")
-                    Text("Carbohydrates")
-                    Text("Protein")
-                    Text("Fat")
-
                 }
+                
+                Group // Macronutrients
+                {
+                    Text("Total Fat (g)")
+                    Text("Carbohydrates (g)")
+                    Text("Protein (g)")
+                }
+                
+                Group // Minerals
+                {
+                    Text("Calcium (mg)")
+                    Text("Iron (mg)")
+                    Text("Magnesium (mg)")
+                    Text("Phosphorus (mg)")
+                    Text("Potassium (mg)")
+                    Text("Sodium (mg)")
+                    Text("Zinc (mg)")
+                }
+                
+                Group // Vitamins Pt1
+                {
+                    Text("Vitamin A (mcg RAE)")
+                    Text("Vitamin E (mg AT)")
+                    Text("Vitamin D (IU)")
+                    Text("Vitamin C (mg)")
+                    Text("Thiamin (mg)")
+                    Text("Riboflavin (mg)")
+                    Text("Niacin (mg)")
+                    Text("Vitamin B-6 (mg)")
+                    Text("Vitamin B-12 (mcg)")
+                    Text("Choline (mg)")
+                }
+                Group // Vitamins Pt2
+                {
+                    Text("Vitamin K (mcg)")
+                    Text("Folate (mcg DFE)")
+                }
+            }.font(.system(size: 15.0))
         }
     }
 }

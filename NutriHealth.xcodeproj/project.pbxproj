@@ -24,6 +24,7 @@
 		EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F325CFB9E3001EEB6A /* ContentView.swift */; };
 		EB57C1F625CFB9E5001EEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */; };
 		EB57C1F925CFB9E5001EEB6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F825CFB9E5001EEB6A /* Preview Assets.xcassets */; };
+		EB6AFA8125EC5E6E009C43A8 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB57C1F825CFB9E5001EEB6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB57C1FA25CFB9E5001EEB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */,
 				184141C125DF71FB00AB96FA /* RecoRow.swift */,
+				EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */,
 			);
 			path = HomeViewContent;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */,
 				183A232125DE45EB000C9732 /* MotherView.swift in Sources */,
 				184141C225DF71FB00AB96FA /* RecoRow.swift in Sources */,
+				EB6AFA8125EC5E6E009C43A8 /* Calendar.swift in Sources */,
 				1841421725E7067800AB96FA /* GoalsColumn.swift in Sources */,
 				1841421A25E7078E00AB96FA /* GoalsColumnItem.swift in Sources */,
 				183A232425DE48CC000C9732 /* Helper.swift in Sources */,
