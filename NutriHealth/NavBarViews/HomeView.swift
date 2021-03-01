@@ -44,11 +44,12 @@ struct HomeView: View {
             Spacer()
             
             // display calories expended from Apple Health data
-            // List(calories, id: \.id) { calorie in
-            // VStack {
-            //  Text("\(calorie.count)")
-            //  Text(calorie.date, style: .date)
-            //      .opacity(0.5)
+            List(calories, id: \.id) { calorie in
+                VStack {
+                    Text("\(calorie.count)")
+                    Text(calorie.date, style: .date).opacity(0.5)
+                }
+            }
         }
         
         .onAppear {
