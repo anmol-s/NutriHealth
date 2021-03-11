@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  DailyIntakeItems.swift
 //  NutriHealth
 //
 //  Created by Owner on 3/10/21.
@@ -11,20 +11,32 @@ struct DailyIntakeItems: View
 {
     var IntakeName: String
     var IntakeValue: String
+    var IntakeRec: String
     
     var body: some View
     {
-        HStack
+        VStack(alignment:.leading)
         {
-            Text(IntakeName)
-                .font(.headline)
-                .fontWeight(.medium)
-            Spacer()
-            Text(IntakeValue)
-                .font(.headline)
+            HStack
+            {
+                Text(IntakeName)
+                    .font(.headline)
+                    .fontWeight(.medium)
+                Spacer()
+                Text(IntakeValue)
+                    .font(.headline)
+            }
             
-            
-        }.padding()
+            HStack
+            {
+                Text("Recommended").font(.subheadline)
+                                   .foregroundColor(.secondary)
+                Spacer()
+                Text(IntakeRec)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }//.padding()
     }
 }
 
@@ -32,7 +44,7 @@ struct DailyIntakeItems_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        DailyIntakeItems(IntakeName: "Calories", IntakeValue: "5")
+        DailyIntakeItems(IntakeName: "Calories", IntakeValue: "5", IntakeRec: "2000")
     }
 }
 
