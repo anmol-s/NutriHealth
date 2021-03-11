@@ -82,8 +82,7 @@ struct SignUpView: View {
         print("Creating new personal model for \(user.username ?? "test")...")
         
         let height:Int = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
-        print("height (ft, in): \(self.heightft), \(self.heightin)")
-        print("height (inches only): \(String(describing: height))")
+        print("height (converted to inches): \(String(describing: height))")
         print("weight: \(self.weight)")
         print("gender: \(self.gender)")
         print("activity level: \(self.activityLevel)")
