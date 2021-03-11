@@ -37,18 +37,23 @@ struct HomeView: View {
         VStack
         {
             Text("Hello Victoria!").font(.largeTitle).fontWeight(.semibold)
-            CalendarView()
+            CalendarView() // This calendar always has a full-size calendar frame. Doesn't matter if you change it to week, month, etc. People complained but nothing we can do.
             RecoRow(items: ["Reco1","Reco2"]).offset(y:-150)
-            DailyIntakeColumn(items: ["1","2"]).offset(y:-150)
+            DailyIntakeColumn().offset(y:-150)
             Spacer()
             
             // display calories expended from Apple Health data
-            List(calories, id: \.id) { calorie in
-                VStack {
-                    Text("\(calorie.count)")
-                    Text(calorie.date, style: .date).opacity(0.5)
-                }
-            }
+            
+            
+// ----- I THINK THIS JUST PUT HERE AS A TEST. NOT SURE WE NEED THIS FOR DISPLAY -----
+//            List(calories, id: \.id) { calorie in
+//                VStack {
+//                    Text("\(calorie.count)")
+//                    Text(calorie.date, style: .date).opacity(0.5)
+//                }
+//            }
+// ----- I THINK THIS JUST PUT HERE AS A TEST. NOT SURE WE NEED THIS FOR DISPLAY -----
+            
         }
         
         .onAppear {

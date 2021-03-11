@@ -7,69 +7,148 @@
 
 import SwiftUI
 //Refer for backend and frontend: https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces
-struct DailyIntakeColumn: View {
-    var items: [String]
-    var body: some View {
-        VStack(alignment: .leading){
-            Text("Daily Intake Percentage")
-                .font(.headline)
-                .padding(.leading, 15)
-                .padding(.top, 5)
-            
+
+struct DailyIntakeColumn: View
+{
+    var body: some View
+    {
+        NavigationView
+        {
             List
             {
-                    //TODO: Add daily intake item file and loop here
-                    
-                    //TODO: Test data Remove after adding above
-                
-                Group // Calories
+                Group
                 {
-                    Text("Calories")
+                    DailyIntakeItems(IntakeName: "Calories", IntakeValue: "11")
                 }
                 
-                Group // Macronutrients
+                Section(header: Text("Macronutrients"))
                 {
-                    Text("Total Fat (g)")
-                    Text("Carbohydrates (g)")
-                    Text("Protein (g)")
+                    Group
+                    {
+                        DailyIntakeItems(IntakeName: "Total Fat (g)", IntakeValue: "22")
+                        DailyIntakeItems(IntakeName: "Carbohydrates (g)", IntakeValue: "33")
+                        DailyIntakeItems(IntakeName: "Protein", IntakeValue: "44")
+                    }
                 }
-                
-                Group // Minerals
+                   
+                Section(header: Text("Minerals"))
                 {
-                    Text("Calcium (mg)")
-                    Text("Iron (mg)")
-                    Text("Magnesium (mg)")
-                    Text("Phosphorus (mg)")
-                    Text("Potassium (mg)")
-                    Text("Sodium (mg)")
-                    Text("Zinc (mg)")
+                    Group
+                    {
+                    DailyIntakeItems(IntakeName: "Calcium (mg)", IntakeValue: "55")
+                    DailyIntakeItems(IntakeName: "Iron (mg)", IntakeValue: "66")
+                    DailyIntakeItems(IntakeName: "Magnesium (mg)", IntakeValue: "77")
+                    DailyIntakeItems(IntakeName: "Phosphorus (mg)", IntakeValue: "88")
+                    DailyIntakeItems(IntakeName: "Potassium (mg)", IntakeValue: "99")
+                    DailyIntakeItems(IntakeName: "Sodium (mg)", IntakeValue: "100")
+                    DailyIntakeItems(IntakeName: "Zinc (mg)", IntakeValue: "110")
+                    }
                 }
-                
-                Group // Vitamins Pt1
+    
+                Section(header: Text("Vitamins"))
                 {
-                    Text("Vitamin A (mcg RAE)")
-                    Text("Vitamin E (mg AT)")
-                    Text("Vitamin D (IU)")
-                    Text("Vitamin C (mg)")
-                    Text("Thiamin (mg)")
-                    Text("Riboflavin (mg)")
-                    Text("Niacin (mg)")
-                    Text("Vitamin B-6 (mg)")
-                    Text("Vitamin B-12 (mcg)")
-                    Text("Choline (mg)")
+                    Group
+                    {
+                        DailyIntakeItems(IntakeName: "Vitamin A (mcg RAE)", IntakeValue: "120")
+                        DailyIntakeItems(IntakeName: "Vitamin E (mg AT)", IntakeValue: "130")
+                        DailyIntakeItems(IntakeName: "Vitamin D (IU)", IntakeValue: "140")
+                        DailyIntakeItems(IntakeName: "Vitamin C (mg)", IntakeValue: "150")
+                        DailyIntakeItems(IntakeName: "Thiamin (mg)", IntakeValue: "160")
+                        DailyIntakeItems(IntakeName: "Riboflavin (mg)", IntakeValue: "170")
+                        DailyIntakeItems(IntakeName: "Niacin (mg)", IntakeValue: "180")
+                        DailyIntakeItems(IntakeName: "Vitamin B-6 (mg)", IntakeValue: "190")
+                        DailyIntakeItems(IntakeName: "Vitamin B-12 (mcg)", IntakeValue: "200")
+                        DailyIntakeItems(IntakeName: "Choline (mg)", IntakeValue: "210")
+                    }
+    
+                    Group
+                    {
+                        DailyIntakeItems(IntakeName: "Vitamin K (mcg)", IntakeValue: "220")
+                        DailyIntakeItems(IntakeName: "Folate (mcg DFE)", IntakeValue: "230")
+                    }
                 }
-                Group // Vitamins Pt2
-                {
-                    Text("Vitamin K (mcg)")
-                    Text("Folate (mcg DFE)")
-                }
-            }.font(.system(size: 15.0))
-        }
+            }.navigationTitle("Daily Intake") // list
+        } // navigation view
     }
 }
 
-struct DailyIntakeColumn_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyIntakeColumn(items: ["1", "2"])
+struct DailyIntakeColumn_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
+        DailyIntakeColumn()
     }
 }
+
+
+//struct DailyIntakeColumn: View {
+//    var items: [String]
+//    var body: some View
+//    {
+//            VStack(alignment: .leading)
+//            {
+//                Text("Daily Intake Percentage")
+//                    .font(.headline)
+//                    .padding(.leading, 15)
+//                    .padding(.top, 5)
+//
+//                List
+//                {
+//                        //TODO: Add daily intake item file and loop here
+//
+//                        //TODO: Test data Remove after adding above
+//
+//                    Group // Calories
+//                    {
+//                        Text("Calories")
+//                    }
+//
+//                    Group // Macronutrients
+//                    {
+//                        Text("Total Fat (g)")
+//                        Text("Carbohydrates (g)")
+//                        Text("Protein (g)")
+//                    }
+//
+//                    Group // Minerals
+//                    {
+//                        Text("Calcium (mg)")
+//                        Text("Iron (mg)")
+//                        Text("Magnesium (mg)")
+//                        Text("Phosphorus (mg)")
+//                        Text("Potassium (mg)")
+//                        Text("Sodium (mg)")
+//                        Text("Zinc (mg)")
+//                    }
+//
+//                    Group // Vitamins Pt1
+//                    {
+//                        Text("Vitamin A (mcg RAE)")
+//                        Text("Vitamin E (mg AT)")
+//                        Text("Vitamin D (IU)")
+//                        Text("Vitamin C (mg)")
+//                        Text("Thiamin (mg)")
+//                        Text("Riboflavin (mg)")
+//                        Text("Niacin (mg)")
+//                        Text("Vitamin B-6 (mg)")
+//                        Text("Vitamin B-12 (mcg)")
+//                        Text("Choline (mg)")
+//                    }
+//                    Group // Vitamins Pt2
+//                    {
+//                        Text("Vitamin K (mcg)")
+//                        Text("Folate (mcg DFE)")
+//                    }
+//
+//                }.font(.system(size: 15.0))
+//            }
+//    }
+//}
+//
+//struct DailyIntakeColumn_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DailyIntakeColumn(items: ["1", "2"])
+//    }
+//}
+
+

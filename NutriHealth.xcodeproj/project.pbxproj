@@ -29,6 +29,7 @@
 		EB57C1F625CFB9E5001EEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */; };
 		EB57C1F925CFB9E5001EEB6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F825CFB9E5001EEB6A /* Preview Assets.xcassets */; };
 		EB6AFA8125EC5E6E009C43A8 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */; };
+		EBA670E925F9F63A0054E726 /* DailyIntakeItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA670E825F9F63A0054E726 /* DailyIntakeItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		EB57C1F825CFB9E5001EEB6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB57C1FA25CFB9E5001EEB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		EBA670E825F9F63A0054E726 /* DailyIntakeItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				184141C425DF796F00AB96FA /* DailyIntakeColumn.swift */,
 				184141C125DF71FB00AB96FA /* RecoRow.swift */,
 				EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */,
+				EBA670E825F9F63A0054E726 /* DailyIntakeItems.swift */,
 			);
 			path = HomeViewContent;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				1841421D25E765B700AB96FA /* ProfileColumn.swift in Sources */,
 				18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */,
 				18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */,
+				EBA670E925F9F63A0054E726 /* DailyIntakeItems.swift in Sources */,
 				EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */,
 				EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */,
 				187683D525F969980002BDF5 /* SignUpView.swift in Sources */,
