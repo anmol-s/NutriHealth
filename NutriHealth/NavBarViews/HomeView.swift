@@ -20,15 +20,14 @@ struct HomeView: View {
         
         healthStore = HealthStore()
     }
-
+    
     private func updateUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) {
-        
         let startDate = NSCalendar.current.date(byAdding: .day, value: -7, to: Date())!
         let endDate = Date()
         
         statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
             let count = statistics.sumQuantity()?.doubleValue(for:  .count())
-            
+
             let calorie = Calorie(count: Int(count ?? 0), date: statistics.startDate)
             calories.append(calorie)
         }
@@ -56,9 +55,9 @@ struct HomeView: View {
             if let healthStore = healthStore {
                 healthStore.requestAuthorization { success in
                     if success {
-                        healthStore.calculateCalories { statisticsCollection in
-                            if let statisticsCollection = statisticsCollection {
-                                updateUIFromStatistics(statisticsCollection)
+                        healthStore.calculateActiveCalories { statisticsCollectionActive in
+                            if let statisticsCollectionActive = statisticsCollectionActive {
+                                updateUIFromStatistics(statisticsCollectionActive)
                             }
                         }
                     }

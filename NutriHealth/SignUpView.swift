@@ -41,7 +41,7 @@ struct SignUpView: View {
             }
             //SignUp button
             Button(action: {
-                //self.createTestUser()
+                self.createNewUser()
                 viewRouter.currentPage = .page2
                 
             }) {
@@ -56,6 +56,59 @@ struct SignUpView: View {
             }
         }
         
+    }
+    
+    
+    
+    func createNewUser(){
+        print("creating new user...")
+        let user = PFUser()
+        user.username = self.username
+        user.password = self.password
+
+        user.signUpInBackground {
+            (succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+              let errorString = error.localizedDescription
+              print(errorString)
+            } else {
+                print("Created user \(String(describing: user.username))")
+                createPersonalModel(user: user)
+            }
+        }
+    }
+    
+    func createPersonalModel(user: PFUser){
+        print("Creating new personal model for \(user.username ?? "test")...")
+        
+        let height:Int = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
+        print("height (ft, in): \(self.heightft), \(self.heightin)")
+        print("height (inches only): \(String(describing: height))")
+        print("weight: \(self.weight)")
+        print("gender: \(self.gender)")
+        print("activity level: \(self.activityLevel)")
+        print("fitness goals: \(self.fitnessGoals)")
+        print("fitness goals: \(self.fitnessGoals)")
+        
+        let personalModel = PFObject(className: "PersonalModel")
+        personalModel.setObject(user.username!, forKey: "username")
+        personalModel.setObject(self.age, forKey: "age")
+        personalModel.setObject(height, forKey: "height")
+        personalModel.setObject((self.weight as NSString).integerValue, forKey: "weight")
+        personalModel.setObject(self.gender, forKey: "gender")
+        personalModel.setObject(self.activityLevel, forKey: "activityLevel")
+        personalModel.setObject(self.fitnessGoals, forKey: "fitnessGoals")
+        personalModel.setObject(user, forKey: "user")
+
+        personalModel.saveInBackground{
+            (succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+              let errorString = error.localizedDescription
+              print(errorString)
+            } else {
+                print("Personal model for \(String(describing: user.username)) created")
+            }
+        }
     }
 }
 
@@ -135,7 +188,7 @@ struct Height: View {
         Group{
             Text("What is your height?").padding(.leading)
             HStack{
-                TextField("0", value: $heightft, formatter:NumberFormatter())
+                TextField("0", text: $heightft)
                     .padding()
                     .frame(width: 100, height: 51)
                     .keyboardType(.numberPad)
@@ -144,7 +197,7 @@ struct Height: View {
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Gray2, lineWidth: 1))
                     .padding([.leading, .trailing])
                 Text("ft").padding()
-                TextField("0", value: $heightin, formatter:NumberFormatter())
+                TextField("0", text: $heightin)
                     .padding()
                     .keyboardType(.numberPad)
                     .frame(width: 100, height: 51)
@@ -164,7 +217,7 @@ struct Weight: View {
         Group{
             Text("How much do you weigh?").padding(.leading)
             HStack{
-                TextField("0", value: $weight, formatter:NumberFormatter())
+                TextField("0", text: $weight)
                     .padding()
                     .frame(width: 300, height: 51)
                     .keyboardType(.numberPad)

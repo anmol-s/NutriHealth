@@ -17,7 +17,8 @@ extension Date {
 
 class HealthStore {
     var healthStore: HKHealthStore?
-    var query: HKStatisticsCollectionQuery?
+    var activeQuery: HKStatisticsCollectionQuery?
+    var restingQuery: HKStatisticsCollectionQuery?
     
     init() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -25,24 +26,45 @@ class HealthStore {
         }
     }
     
-    func calculateCalories(completion: @escaping (HKStatisticsCollection?) -> Void) {
-        
-        let calorieType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
+    func calculateActiveCalories(completion: @escaping (HKStatisticsCollection?) -> Void) {
+        print("in HealthStore calculateActiveCalories")
+        let activeCalorieType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
         
         let startDate = NSCalendar.current.date(byAdding: .day, value: -7, to: Date())
         let anchorDate = Date.mondayAt12AM()
         let daily = DateComponents(day: 1)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
         
-        query = HKStatisticsCollectionQuery(quantityType: calorieType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
-        query!.initialResultsHandler = { query, statisticsCollection, error in
+        activeQuery = HKStatisticsCollectionQuery(quantityType: activeCalorieType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
+        activeQuery!.initialResultsHandler = { activeQuery, statisticsCollection, error in
             completion(statisticsCollection)
+            
         }
         
-        if let healthStore = healthStore, let query = self.query {
-            healthStore.execute(query)
+        if let healthStore = healthStore, let activeQuery = self.activeQuery {
+            healthStore.execute(activeQuery)
         }
     }
+    
+    func calculateRestingCalories(completion: @escaping (HKStatisticsCollection?) -> Void) {
+        print("in HealthStore calculateRestingCalories")
+        let restingCalorieType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)!
+        
+        let startDate = NSCalendar.current.date(byAdding: .day, value: -7, to: Date())
+        let anchorDate = Date.mondayAt12AM()
+        let daily = DateComponents(day: 1)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+        
+        restingQuery = HKStatisticsCollectionQuery(quantityType: restingCalorieType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
+        restingQuery!.initialResultsHandler = { restingQuery, statisticsCollection, error in
+                completion(statisticsCollection)
+        }
+        
+        if let healthStore = healthStore, let restingQuery = self.restingQuery {
+            healthStore.execute(restingQuery)
+        }
+    }
+    
     
     func requestAuthorization(completion: @escaping (Bool) -> Void) {
         

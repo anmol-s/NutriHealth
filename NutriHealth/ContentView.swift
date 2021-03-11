@@ -73,7 +73,7 @@ struct ContentView: View {
             print("view appeared")
             //uncomment the below line if test user NOT already created
             //self.createTestUser()
-//            self.createTestPersonalModel()
+            //self.createTestPersonalModel()
         }
     }
     func createTestUser(){
@@ -95,7 +95,8 @@ struct ContentView: View {
             }
           }
     }
-    
+   
+    /*
     func createTestPersonalModel(){
         print("creating Test personal model...")
         
@@ -105,7 +106,7 @@ struct ContentView: View {
         personalModel.setObject(100, forKey: "height")
         personalModel.setObject("vitamin d", forKey: "deficiencies")
         personalModel.setObject("vegan", forKey: "dietaryRestrictions")
-        personalModel.setObject(PFUser.current(), forKey: "user")
+        personalModel.setObject(PFUser.current()!, forKey: "user")
         
         personalModel.saveInBackground{
             (succeeded: Bool, error: Error?) -> Void in
@@ -117,6 +118,7 @@ struct ContentView: View {
             }
         }
     }
+    */
 }
 
 struct ContentView_Previews: PreviewProvider {
