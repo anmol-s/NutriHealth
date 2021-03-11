@@ -37,7 +37,7 @@ struct HomeView: View {
     var body: some View {
         VStack
         {
-            Text("Home").font(.title)
+            Text("Hello Victoria!").font(.largeTitle).fontWeight(.semibold)
             CalendarView()
             RecoRow(items: ["Reco1","Reco2"]).offset(y:-150)
             DailyIntakeColumn(items: ["1","2"]).offset(y:-150)

@@ -18,6 +18,9 @@ struct MotherView: View {
         case .page2:
         //Home Page
             HostingTabBar(viewRouter: viewRouter)
+        case .page3:
+        //SignUp Page
+            SignUpView(viewRouter: viewRouter)
         }
 
     }

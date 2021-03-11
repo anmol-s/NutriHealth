@@ -15,6 +15,7 @@
 		1841421725E7067800AB96FA /* GoalsColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1841421625E7067800AB96FA /* GoalsColumn.swift */; };
 		1841421A25E7078E00AB96FA /* GoalsColumnItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1841421925E7078E00AB96FA /* GoalsColumnItem.swift */; };
 		1841421D25E765B700AB96FA /* ProfileColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1841421C25E765B700AB96FA /* ProfileColumn.swift */; };
+		187683D525F969980002BDF5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187683D425F969980002BDF5 /* SignUpView.swift */; };
 		18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B425DE516B00CEA370 /* ViewRouter.swift */; };
 		18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2B825DE5CB500CEA370 /* ReportView.swift */; };
 		18D1C2BD25DE5CC300CEA370 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */; };
@@ -40,6 +41,7 @@
 		1841421625E7067800AB96FA /* GoalsColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsColumn.swift; sourceTree = "<group>"; };
 		1841421925E7078E00AB96FA /* GoalsColumnItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsColumnItem.swift; sourceTree = "<group>"; };
 		1841421C25E765B700AB96FA /* ProfileColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColumn.swift; sourceTree = "<group>"; };
+		187683D425F969980002BDF5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		18D1C2B425DE516B00CEA370 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		18D1C2B825DE5CB500CEA370 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				EB57C1F325CFB9E3001EEB6A /* ContentView.swift */,
 				18D1C2B725DE5C6700CEA370 /* NavBarViews */,
 				183A232025DE45EB000C9732 /* MotherView.swift */,
+				187683D425F969980002BDF5 /* SignUpView.swift */,
 				18D1C2B425DE516B00CEA370 /* ViewRouter.swift */,
 				EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */,
 				EB57C1FA25CFB9E5001EEB6A /* Info.plist */,
@@ -305,6 +308,7 @@
 				18D1C2B925DE5CB500CEA370 /* ReportView.swift in Sources */,
 				EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */,
 				EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */,
+				187683D525F969980002BDF5 /* SignUpView.swift in Sources */,
 				5570D8DA25ED78EB00FAB456 /* HealthStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

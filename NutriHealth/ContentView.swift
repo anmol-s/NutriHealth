@@ -59,13 +59,21 @@ struct ContentView: View {
                 LoginButtonText()
                 .padding()
             }
+            HStack{
+                Text("Don't have an account?")
+                Button(action:{
+                    viewRouter.currentPage = .page3
+                }){
+                    Text("Sign Up")
+                }
+            }
         }
         .padding(20.0)
         .onAppear(){
             print("view appeared")
             //uncomment the below line if test user NOT already created
             //self.createTestUser()
-            self.createTestPersonalModel()
+//            self.createTestPersonalModel()
         }
     }
     func createTestUser(){
@@ -151,7 +159,7 @@ struct LoginButtonText: View {
 struct EmailTextField: View {
     @Binding var username: String
     var body: some View {
-        TextField("Email", text: $username)
+        TextField("Username", text: $username)
             .padding()
             .frame(width: 360, height: 51)
             .background(Gray1)
