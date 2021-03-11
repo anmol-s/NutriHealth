@@ -25,19 +25,19 @@ struct HostingTabBar: View {
             HomeView()
                 .tag(0)
                 .tabItem {
-//                    Text("Home")
+                    Text("Home")
                     Image(systemName: "house.fill")
                 }
-            ReportView()
+            FoodView()
                 .tag(1)
                 .tabItem {
-//                    Text("Report")
-                    Image(systemName: "folder.fill")
+                    Text("Food")
+                    Image(systemName: "leaf.fill")
                 }
             ProfileView()
                 .tag(2)
                 .tabItem {
-//                    Text("Profile")
+                    Text("Profile")
                     Image(systemName: "person.fill")
                 }
         }

@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ReportView: View {
+struct FoodView: View {
     var body: some View {
-        Text("Report Page")
+        Text("Food Page")
     }
 }
 
-struct ReportView_Previews: PreviewProvider {
+struct FoodView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportView()
+        FoodView()
     }
 }
