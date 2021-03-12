@@ -29,6 +29,7 @@
 		EB57C1F625CFB9E5001EEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F525CFB9E5001EEB6A /* Assets.xcassets */; };
 		EB57C1F925CFB9E5001EEB6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57C1F825CFB9E5001EEB6A /* Preview Assets.xcassets */; };
 		EB6AFA8125EC5E6E009C43A8 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */; };
+		EB939C1225FB6B5D00B45659 /* RecoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB939C1125FB6B5D00B45659 /* RecoItems.swift */; };
 		EBA670E925F9F63A0054E726 /* DailyIntakeItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA670E825F9F63A0054E726 /* DailyIntakeItems.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		EB57C1F825CFB9E5001EEB6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB57C1FA25CFB9E5001EEB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		EB939C1125FB6B5D00B45659 /* RecoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoItems.swift; sourceTree = "<group>"; };
 		EBA670E825F9F63A0054E726 /* DailyIntakeItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				184141C125DF71FB00AB96FA /* RecoRow.swift */,
 				EB6AFA8025EC5E6E009C43A8 /* Calendar.swift */,
 				EBA670E825F9F63A0054E726 /* DailyIntakeItems.swift */,
+				EB939C1125FB6B5D00B45659 /* RecoItems.swift */,
 			);
 			path = HomeViewContent;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				18D1C2C025DE5E5000CEA370 /* HostingTabBar.swift in Sources */,
 				1841421D25E765B700AB96FA /* ProfileColumn.swift in Sources */,
 				18D1C2B525DE516B00CEA370 /* ViewRouter.swift in Sources */,
+				EB939C1225FB6B5D00B45659 /* RecoItems.swift in Sources */,
 				18D1C2B925DE5CB500CEA370 /* FoodView.swift in Sources */,
 				EBA670E925F9F63A0054E726 /* DailyIntakeItems.swift in Sources */,
 				EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */,

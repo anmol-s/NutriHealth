@@ -35,6 +35,7 @@ struct HomeView: View {
     
     
     var body: some View {
+        
         VStack
         {
             Rectangle()
@@ -43,8 +44,8 @@ struct HomeView: View {
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
             Text("Dashboard").font(.system(size: 18)).fontWeight(.semibold).offset(y:-41)
             CalendarView().offset(y:-48) // This calendar always has a full-size calendar frame. Doesn't matter if you change it to week, month, etc. People complained but nothing we can do.
-            RecoRow(items: ["Reco1","Reco2"]).offset(y:-210)
-            DailyIntakeColumn().offset(y:-210)
+            RecoRow().offset(y:-180)
+            DailyIntakeColumn().offset(y:-180)
             Spacer()
             
             // display calories expended from Apple Health data

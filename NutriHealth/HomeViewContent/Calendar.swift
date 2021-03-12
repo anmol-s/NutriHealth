@@ -11,16 +11,15 @@ import FSCalendar
 
 struct Calendar: View
 {
-    var body: some View {
-        VStack(alignment: .leading)
-        {
-            CalendarView()
-        }
+    var body: some View
+    {
+        CalendarView()
     }
 }
 
 struct Calendar_Previews: PreviewProvider {
-    static var previews: some View {
+    static var previews: some View
+    {
         Calendar()
     }
 }

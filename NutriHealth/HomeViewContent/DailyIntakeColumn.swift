@@ -10,6 +10,12 @@ import SwiftUI
 
 struct DailyIntakeColumn: View
 {
+    
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "AppleSDGothicNeo-Bold", size: 25)!]
+    }
+    
     var body: some View
     {
         NavigationView
@@ -67,7 +73,7 @@ struct DailyIntakeColumn: View
                         DailyIntakeItems(IntakeName: "Folate (mcg DFE)", IntakeValue: "230", IntakeRec: "2000")
                     }
                 }
-            }.navigationTitle("Daily Intake") // list
+            }.navigationTitle("Daily Calories & Nutrition") // list
         } // navigation view
     }
 }
