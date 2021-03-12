@@ -6,11 +6,33 @@ struct InputView: View {
 @State var isSearching = false
 @ObservedObject var manager = HttpRequest()
 
-var body: some View {
-    NavigationView{
-        ScrollView{
-            HStack {
-                HStack{
+init(){
+    UISegmentedControl.appearance().selectedSegmentTintColor = .systemBlue
+    UISegmentedControl.appearance().backgroundColor = UIColor.white
+    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+}
+    
+var body: some View
+{
+    NavigationView
+    {
+        VStack{
+            Rectangle()
+                .frame(height: 80)
+                .foregroundColor(.blue)
+                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+            FoodPageTitle().offset(y:-41)
+            Spacer()
+        
+        
+        ScrollView
+        {
+            HStack
+            {
+                
+                
+                HStack
+                {
                     TextField("Food Name", text: $query)
                         .padding(.leading, 24)
                 }
@@ -56,12 +78,12 @@ var body: some View {
             }) {
                 HStack{
                     Spacer()
-                    Text("Search")
+                    Text("Search").fontWeight(.semibold)
                     Spacer()
                 }
                 .accentColor(Color.white)
                 .padding(.vertical, 10)
-                .background(Color.red)
+                .background(Color.blue)
                 .cornerRadius(5)
                 .padding(.horizontal, 40)
 
@@ -82,13 +104,14 @@ var body: some View {
                         }
                         .padding()
                         .foregroundColor(.white)
-                        .background(Color.red)
+                        .background(Color.blue)
                         .cornerRadius(30)
                     }
                 }
             }
         }
-        .navigationTitle("Food Input")
+//        .navigationTitle("Food Input")
+    }.edgesIgnoringSafeArea(.top)
     }
    }
   }
@@ -98,3 +121,10 @@ var body: some View {
         InputView()
     }
    }
+
+struct FoodPageTitle: View {
+    var body: some View {
+        Text("Food Input")
+            .font(.system(size: 18)).fontWeight(.semibold)
+    }
+}

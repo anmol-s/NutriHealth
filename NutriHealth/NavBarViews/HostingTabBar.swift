@@ -28,7 +28,7 @@ struct HostingTabBar: View {
                     Text("Home")
                     Image(systemName: "house.fill")
                 }
-            FoodView()
+            InputView()
                 .tag(1)
                 .tabItem {
                     Text("Food")
@@ -39,12 +39,6 @@ struct HostingTabBar: View {
                 .tabItem {
                     Text("Profile")
                     Image(systemName: "person.fill")
-                }
-            InputView()
-                .tag(3)
-                .tabItem{
-                    Text("Input")
-                    Image(systemName:"plus")
                 }
         }
     }
