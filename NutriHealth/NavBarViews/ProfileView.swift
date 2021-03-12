@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Parse
 
 struct ProfileView: View {
     @State var selectedView = 0
@@ -55,8 +56,10 @@ struct profileImage: View {
 }
 
 struct profileName: View {
+    var currentUser = PFUser.current()
     var body: some View {
-        Text("Victoria Robertson")
+        let username = currentUser!.username!
+        Text(username)
             .font(.largeTitle)
             .fontWeight(.semibold)
             .padding(.bottom, 0)
