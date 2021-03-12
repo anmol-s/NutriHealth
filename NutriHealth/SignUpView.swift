@@ -143,9 +143,9 @@ struct SignUpView: View
         heightConverted = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
         self.bmi = ((self.weight as NSString).doubleValue / Double(self.heightConverted) / Double(self.heightConverted) * 703).roundTo(places: 1)
 
-        {
+        if (self.bmi < 18.5){
             self.recoMsg = "You have an UNDERWEIGHT weight status. You are recommended to GAIN weight."
-            print("You have an UNDERWEIGHT weight status. You are recommended to GAIN weight."
+            print("You have an UNDERWEIGHT weight status. You are recommended to GAIN weight.")
         }
         else if (self.bmi >= 18.5) && (self.bmi < 25)
         {
@@ -199,6 +199,7 @@ struct SignUpView: View
             self.recommendedProtein = ((self.weight as NSString).doubleValue).roundTo(places: 1)
             self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
             self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
+        }
         else if self.desiredPoundsLoss == "15-25 pounds" {
             self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.15)).roundTo(places: 1)
             self.recommendedProtein = ((self.weight as NSString).doubleValue * 0.8).roundTo(places: 1)
@@ -410,7 +411,6 @@ struct DesiredPoundsLoss: View {
     }
 }
 
-
 extension Binding {
     func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
         Binding(
@@ -429,5 +429,7 @@ extension Double {
         return (self * divisor).rounded() / divisor
     }
 }
+
+
 
 
