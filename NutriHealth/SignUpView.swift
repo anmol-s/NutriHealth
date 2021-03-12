@@ -346,15 +346,14 @@ struct ActivityLevels: View {
 
 struct FitnessGoals: View {
     @Binding var fitnessGoals:String
-    var goals: [String] = ["loseWeightGainMuscle", "maintainWeightLoseFatGainMuscle", "maintainFitness", "gainWeightGainMuscle"]
+    var goals: [String] = ["loseWeightGainMuscle", "maintainFitness", "gainWeightGainMuscle"]
     var body: some View {
         Group{
             Text("What are your Fitness Goals?").padding(.leading)
             Picker("Fitness Goals", selection: $fitnessGoals, content: {
                 Text("Lose Weight & Gain Muscle").tag(goals[0])
-                Text("Maintain Current Weight While Simultaneously Losing Fat & Building Muscle").tag(goals[1])
-                Text("Maintain Fit Level").tag(goals[2])
-                Text("Gain Weight & Gain Muscle").tag(goals[3])
+                Text("Maintain Fit Level").tag(goals[1])
+                Text("Gain Weight & Gain Muscle").tag(goals[2])
             })
         }
     }
