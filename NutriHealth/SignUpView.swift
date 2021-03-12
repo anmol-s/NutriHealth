@@ -32,6 +32,7 @@ struct SignUpView: View
     @State var recommendedFat: Double = 0.0
     @State var recommendedCarbs: Double = 0.0
     @State var bmi: Double = 0.0
+    @State var recoMsg: String = ""
  
     var body: some View {
         VStack{
@@ -41,28 +42,42 @@ struct SignUpView: View
                     Username(username: $username)
                     Password(password: $password, hidden: $hidden)
                     Age(age: $age)
-                    Height(heightft: $heightft, heightin: $heightin)
-                    Weight(weight: $weight)
-                    Gender(gender: $gender)
+                    Height(heightft: $heightft.onChange(BMIPoundLossRecommendation), heightin: $heightin.onChange(BMIPoundLossRecommendation))
+                    Weight(weight: $weight.onChange(BMIPoundLossRecommendation))
+                    Gender(gender: $gender.onChange(BMIPoundLossRecommendation))
                     ActivityLevels(activityLevel: $activityLevel)
+                    if(self.bmi != 0.0){
+                        Text("\(self.recoMsg)")
+                            .fontWeight(.semibold)
+                            .padding()
+                            .frame(width: 375, height: 79)
+                            .padding()
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.leading)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.blue)
+                                    .padding()
+                            )
+                    }
                     FitnessGoals(fitnessGoals: $fitnessGoals)
                     DesiredPoundsLoss(desiredPoundsLoss: $desiredPoundsLoss)
                 }
-            }
-            //SignUp button
-            Button(action: {
-                self.createNewUser()
-                viewRouter.currentPage = .page2
-                
-            }) {
-                Text("Sign Up")
-                    .font(.headline)
-                    .foregroundColor(.white)
+                //SignUp button
+                Button(action: {
+                    self.createNewUser()
+                    viewRouter.currentPage = .page2
+                    
+                }) {
+                    Text("Sign Up")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 360, height: 51)
+                        .background(Color.blue)
+                        .cornerRadius(100.0)
                     .padding()
-                    .frame(width: 360, height: 51)
-                    .background(Color.blue)
-                    .cornerRadius(100.0)
-                .padding()
+                }
             }
         }
         
@@ -92,7 +107,7 @@ struct SignUpView: View
         heightConverted = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
         
         self.calculateRecommendations()
-        self.BMIPoundLossRecommendation()
+//        self.BMIPoundLossRecommendation()
         
         let personalModel = PFObject(className: "PersonalModel")
         personalModel.setObject(user.username!, forKey: "username")
@@ -123,24 +138,29 @@ struct SignUpView: View
         }
     }
     
-    func BMIPoundLossRecommendation() // THIS NEEDS TO BE DISPLAYED IN BETWEEN "ACTIVE" & "FITNESS GOALS"
+    func BMIPoundLossRecommendation(to Value: String) // THIS NEEDS TO BE DISPLAYED IN BETWEEN "ACTIVE" & "FITNESS GOALS"
     {
+        heightConverted = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
         self.bmi = (self.weight as NSString).doubleValue / Double(self.heightConverted) / Double(self.heightConverted) * 703
-
+        
         if self.bmi < 18.5
         {
+            self.recoMsg = "You have an UNDERWEIGHT weight status. You are recommended to GAIN weight."
             print("You have an UNDERWEIGHT weight status. You are recommended to GAIN weight.")
         }
         else if (self.bmi >= 18.5) && (self.bmi < 25)
         {
+            self.recoMsg = "You have a NORMAL weight status. You are recommended to MAINTAIN fit level."
             print("You have a NORMAL weight status. You are recommended to MAINTAIN fit level.")
         }
         else if (self.bmi >= 25) && (self.bmi < 30)
         {
+            self.recoMsg = "You have a OVERWEIGHT weight status. You are recommended to LOSE weight."
             print("You have a OVERWEIGHT weight status. You are recommended to LOSE weight.")
         }
         else if (self.bmi >= 25) && (self.bmi < 30)
         {
+            self.recoMsg = "You have a OBESE weight status. You are HIGHLY recommended to LOSE weight."
             print("You have a OBESE weight status. You are HIGHLY recommended to LOSE weight.")
         }
     }
@@ -175,7 +195,7 @@ struct SignUpView: View
         self.maintenanceCalories = self.restingMetabolicRate * activityMultiplier
         
         if self.desiredPoundsLoss == "5-10 pounds" {
-            self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.1)).
+            self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.1))
             self.recommendedProtein = (self.weight as NSString).doubleValue
             self.recommendedFat = (self.weight as NSString).doubleValue * 0.4
             self.recommendedCarbs = (self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4
@@ -388,5 +408,17 @@ struct DesiredPoundsLoss: View {
                 Text("30+ pounds").tag(poundsOptions[2])
             })
         }
+    }
+}
+
+extension Binding {
+    func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
+        Binding(
+            get: { self.wrappedValue },
+            set: { newValue in
+                self.wrappedValue = newValue
+                handler(newValue)
+            }
+        )
     }
 }

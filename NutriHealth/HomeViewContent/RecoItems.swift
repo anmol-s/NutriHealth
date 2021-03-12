@@ -18,10 +18,11 @@ struct RecoItems: View
             HStack(alignment: .top, spacing: 0)
             {
                 Text(RecommendationText)
+                    .fontWeight(.semibold)
                     .padding()
                     .frame(width: 155, height: 79)
                     .font(.system(size: 13.0))
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
