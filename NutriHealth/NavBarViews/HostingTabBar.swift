@@ -40,6 +40,12 @@ struct HostingTabBar: View {
                     Text("Profile")
                     Image(systemName: "person.fill")
                 }
+            InputView()
+                .tag(3)
+                .tabItem{
+                    Text("Input")
+                    Image(systemName:"plus")
+                }
         }
     }
 }
