@@ -9,7 +9,8 @@ import SwiftUI
 import Parse
 //This is the Sign up page
 
-struct SignUpView: View {
+struct SignUpView: View
+{
     @StateObject var viewRouter = ViewRouter()
     
     @State var username: String = ""
@@ -46,8 +47,6 @@ struct SignUpView: View {
                     ActivityLevels(activityLevel: $activityLevel)
                     FitnessGoals(fitnessGoals: $fitnessGoals)
                     DesiredPoundsLoss(desiredPoundsLoss: $desiredPoundsLoss)
-                    
-                
                 }
             }
             //SignUp button
@@ -68,8 +67,6 @@ struct SignUpView: View {
         }
         
     }
-    
-    
     
     func createNewUser(){
         print("creating new user...")
@@ -94,6 +91,7 @@ struct SignUpView: View {
         
         //let height:Int = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
         heightConverted = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
+        
         self.calculateRecommendations()
         
         let personalModel = PFObject(className: "PersonalModel")
@@ -113,6 +111,8 @@ struct SignUpView: View {
         personalModel.setObject(self.recommendedFat, forKey: "recommendedFat")
         personalModel.setObject(self.recommendedCarbs, forKey: "recommendedCarbs")
         personalModel.setObject(user, forKey: "user")
+        
+        self.BMIPoundLossRecommendation()
 
         personalModel.saveInBackground{
             (succeeded: Bool, error: Error?) -> Void in
@@ -125,9 +125,31 @@ struct SignUpView: View {
         }
     }
     
+    func BMIPoundLossRecommendation() // THIS NEEDS TO BE DISPLAYED IN BETWEEN "ACTIVE" & "FITNESS GOALS"
+    {
+        self.bmi = (self.weight as NSString).doubleValue / Double(self.heightConverted) / Double(self.heightConverted) * 703
+
+        if self.bmi < 18.5
+        {
+            print("You have an UNDERWEIGHT weight status. You are recommended to GAIN weight.")
+        }
+        else if (self.bmi >= 18.5) && (self.bmi < 25)
+        {
+            print("You have a NORMAL weight status. You are recommended to MAINTAIN fit level.")
+        }
+        else if (self.bmi >= 25) && (self.bmi < 30)
+        {
+            print("You have a OVERWEIGHT weight status. You are recommended to LOSE weight.")
+        }
+        else if (self.bmi >= 25) && (self.bmi < 30)
+        {
+            print("You have a OBESE weight status. You are HIGHLY recommended to LOSE weight.")
+        }
+    }
+    
     func calculateRecommendations() {
         var activityMultiplier: Double = 0.0
-        self.bmi = (self.weight as NSString).doubleValue / Double(self.heightConverted) / Double(self.heightConverted) * 703
+        
         if activityLevel == "inactive" {
             activityMultiplier = 1.2
         }
