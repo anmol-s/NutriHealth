@@ -66,7 +66,8 @@ var body: some View {
 
             }
             Button(action: {
-                print(self.manager.food)
+                print(self.manager.foodData.foods[0].food_name)
+                print(self.manager.foodData.foods[0].nf_calories)
             }) {
                 HStack{
                     Spacer()
