@@ -249,13 +249,13 @@ struct Age: View {
 
 struct Gender: View {
     @Binding var gender: String
+    var genders: [String] = ["male", "female"]
     var body: some View {
         Group{
             Text("Select Gender").padding(.leading)
             Picker("Gender", selection: $gender, content: {
-                Text("Male").tag(1)
-                Text("Female").tag(2)
-                Text("Non-Binary").tag(3)
+                Text("Male").tag(genders[0])
+                Text("Female").tag(genders[1])
             })
         }
     }
@@ -263,14 +263,15 @@ struct Gender: View {
 
 struct ActivityLevels: View {
     @Binding var activityLevel:String
+    var levels: [String] = ["inactive", "somewhatActive", "active", "veryActive"]
     var body: some View {
         Group{
             Text("How active are you?").padding(.leading)
             Picker("Activity Level", selection: $activityLevel, content: {
-                Text("Inactive").tag(1)
-                Text("Somewhat Active").tag(2)
-                Text("Active").tag(3)
-                Text("Very Active").tag(4)
+                Text("Inactive").tag(levels[0])
+                Text("Somewhat Active").tag(levels[1])
+                Text("Active").tag(levels[2])
+                Text("Very Active").tag(levels[3])
             })
         }
     }
@@ -278,14 +279,15 @@ struct ActivityLevels: View {
 
 struct FitnessGoals: View {
     @Binding var fitnessGoals:String
+    var goals: [String] = ["loseWeightGainMuscle", "maintainWeightLoseFatGainMuscle", "maintainFitness", "gainWeightGainMuscle"]
     var body: some View {
         Group{
             Text("What are your Fitness Goals?").padding(.leading)
             Picker("Fitness Goals", selection: $fitnessGoals, content: {
-                Text("Lose Weight & Gain Muscle").tag(1)
-                Text("Maintain Current Weight While Simultaneously Losing Fat & Building Muscle").tag(2)
-                Text("Maintain Fit Level").tag(3)
-                Text("Gain Weight & Gain Muscle").tag(4)
+                Text("Lose Weight & Gain Muscle").tag(goals[0])
+                Text("Maintain Current Weight While Simultaneously Losing Fat & Building Muscle").tag(goals[1])
+                Text("Maintain Fit Level").tag(goals[2])
+                Text("Gain Weight & Gain Muscle").tag(goals[3])
             })
         }
     }
