@@ -16,13 +16,21 @@ struct SignUpView: View {
     @State var password: String = ""
     @State var heightft: String = ""
     @State var heightin: String = ""
+    @State var heightConverted: Int = 0
     @State var weight: String = ""
     @State var hidden: Bool = false
     @State var age:String = ""
     @State var gender: String = ""
     @State var activityLevel: String = ""
     @State var fitnessGoals: String = ""
-    
+    @State var restingMetabolicRate: Double = 0.0
+    @State var maintenanceCalories: Double = 0.0
+    @State var recommendedCalories: Double = 0.0
+    @State var recommendedProtein: Double = 0.0
+    @State var recommendedFat: Double = 0.0
+    @State var recommendedCarbs: Double = 0.0
+    @State var bmi: Double = 0.0
+ 
     var body: some View {
         VStack{
             Header()
@@ -81,22 +89,25 @@ struct SignUpView: View {
     func createPersonalModel(user: PFUser){
         print("Creating new personal model for \(user.username ?? "test")...")
         
-        let height:Int = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
-        print("height (converted to inches): \(String(describing: height))")
-        print("weight: \(self.weight)")
-        print("gender: \(self.gender)")
-        print("activity level: \(self.activityLevel)")
-        print("fitness goals: \(self.fitnessGoals)")
-        print("fitness goals: \(self.fitnessGoals)")
+        //let height:Int = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
+        heightConverted = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
+        self.calculateRecommendations()
         
         let personalModel = PFObject(className: "PersonalModel")
         personalModel.setObject(user.username!, forKey: "username")
         personalModel.setObject(self.age, forKey: "age")
-        personalModel.setObject(height, forKey: "height")
+        personalModel.setObject(self.heightConverted, forKey: "height")
         personalModel.setObject((self.weight as NSString).integerValue, forKey: "weight")
         personalModel.setObject(self.gender, forKey: "gender")
         personalModel.setObject(self.activityLevel, forKey: "activityLevel")
         personalModel.setObject(self.fitnessGoals, forKey: "fitnessGoals")
+        personalModel.setObject(self.bmi, forKey: "bmi")
+        personalModel.setObject(self.restingMetabolicRate, forKey: "restingMetabolicRate")
+        personalModel.setObject(self.maintenanceCalories, forKey: "maintenanceCalories")
+        personalModel.setObject(self.recommendedCalories, forKey: "recommendedCalories")
+        personalModel.setObject(self.recommendedProtein, forKey: "recommendedProtein")
+        personalModel.setObject(self.recommendedFat, forKey: "recommendedFat")
+        personalModel.setObject(self.recommendedCarbs, forKey: "recommendedCarbs")
         personalModel.setObject(user, forKey: "user")
 
         personalModel.saveInBackground{
@@ -108,6 +119,36 @@ struct SignUpView: View {
                 print("Personal model for \(String(describing: user.username)) created")
             }
         }
+    }
+    
+    func calculateRecommendations() {
+        var activityMultiplier: Double = 0.0
+        self.bmi = (self.weight as NSString).doubleValue / Double(self.heightConverted) / Double(self.heightConverted) * 703
+        if activityLevel == "inactive" {
+            activityMultiplier = 1.2
+        }
+        else if activityLevel == "somewhatActive" {
+            activityMultiplier = 1.3
+        }
+        else if activityLevel == "active" {
+            activityMultiplier = 1.5
+        }
+        else { //very active
+            activityMultiplier = 1.7
+        }
+        if self.gender == "male" {
+            let weightFactor = 6.2 * (self.weight as NSString).doubleValue
+            let heightFactor = 12.7 * Double(self.heightConverted)
+            let ageFactor = 6.76 * Double(self.age)!
+            self.restingMetabolicRate = 66 + weightFactor + heightFactor - ageFactor
+        }
+        else if self.gender == "female" {
+            let weightFactor = 4.35 * (self.weight as NSString).doubleValue
+            let heightFactor = 4.7 * Double(self.heightConverted)
+            let ageFactor = 4.7 * Double(self.age)!
+            self.restingMetabolicRate = 655 + weightFactor + heightFactor - ageFactor
+        }
+        self.maintenanceCalories = self.restingMetabolicRate * activityMultiplier
     }
 }
 
