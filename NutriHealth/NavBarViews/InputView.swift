@@ -4,7 +4,7 @@ struct InputView: View {
 
 @State private var query: String = ""
 @State var isSearching = false
-@State var manager = HttpRequest()
+@ObservedObject var manager = HttpRequest()
 
 var body: some View {
     NavigationView{
@@ -40,7 +40,6 @@ var body: some View {
                 if isSearching{
                     Button(action: {
                         isSearching=false
-                        query=""
                     }, label:{
                         Text("Cancel")
                             .padding(.trailing)
@@ -52,6 +51,8 @@ var body: some View {
             }
             Button(action: {
                 self.manager.postRequest(query: self.query)
+                isSearching = false
+                query = ""
             }) {
                 HStack{
                     Spacer()
@@ -65,25 +66,29 @@ var body: some View {
                 .padding(.horizontal, 40)
 
             }
-            Button(action: {
-                print(self.manager.foodData.foods[0].food_name)
-                print(self.manager.foodData.foods[0].nf_calories)
-            }) {
-                HStack{
+            if(self.manager.foodData.foods[0].food_name != ""){
+                HStack {
+                    Text(self.manager.foodData.foods[0].food_name)
+                        .padding()
+                    Text(String(self.manager.foodData.foods[0].nf_calories) + " Calories")
                     Spacer()
-                    Text("Print food to console")
-                    Spacer()
+                    Button(action: {
+                        print("Food Added!")
+                    }) {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add")
+                                .fontWeight(.semibold)
+                        }
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.red)
+                        .cornerRadius(30)
+                    }
                 }
-                .accentColor(Color.white)
-                .padding(.vertical, 10)
-                .background(Color.red)
-                .cornerRadius(5)
-                .padding(.horizontal, 40)
-
             }
         }
         .navigationTitle("Food Input")
-        Text(self.manager.food)
     }
    }
   }

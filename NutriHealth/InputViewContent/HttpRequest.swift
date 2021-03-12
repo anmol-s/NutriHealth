@@ -57,11 +57,10 @@ class HttpRequest: ObservableObject {
         guard let loaded = try? decorder.decode(foods.self, from: data) else {
             fatalError("Unable to decode \(data)")
         }
-        self.foodData = loaded
         let str = String(decoding: data, as: UTF8.self)
         DispatchQueue.main.async {
+            self.foodData = loaded
             self.food = str
-            print("self.food set to data")
             return
         }
     }.resume()
