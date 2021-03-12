@@ -193,22 +193,37 @@ struct SignUpView: View
         }
         self.maintenanceCalories = self.restingMetabolicRate * activityMultiplier
         
-        if self.desiredPoundsLoss == "5-10 pounds" {
-            self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.1))
+        if (self.desiredPoundsLoss == "5-10 pounds") && (self.fitnessGoals == "loseWeightGainMuscle") {
             self.recommendedCalories = self.maintenanceCalories - (self.maintenanceCalories * 0.1).roundTo(places: 1)
             self.recommendedProtein = ((self.weight as NSString).doubleValue).roundTo(places: 1)
             self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
             self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
         }
-        else if self.desiredPoundsLoss == "15-25 pounds" {
+        
+        else if (self.desiredPoundsLoss == "15-25 pounds") && (self.fitnessGoals == "loseWeightGainMuscle") {
             self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.15)).roundTo(places: 1)
             self.recommendedProtein = ((self.weight as NSString).doubleValue * 0.8).roundTo(places: 1)
             self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
             self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
         }
-        else { //30+ lbs
+        
+        else if (self.desiredPoundsLoss == "30+") && (self.fitnessGoals == "loseWeightGainMuscle") { //30+ lbs
             self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.2)).roundTo(places: 1)
             self.recommendedProtein = ((self.weight as NSString).doubleValue * 0.6).roundTo(places: 1)
+            self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
+            self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
+        }
+        
+        else if self.fitnessGoals == "maintainFitness" {
+            self.recommendedCalories = self.maintenanceCalories
+            self.recommendedProtein = ((self.weight as NSString).doubleValue).roundTo(places: 1)
+            self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
+            self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
+        }
+        
+        else if self.fitnessGoals == "gainWeightGainMuscle" {
+            self.recommendedCalories = (self.maintenanceCalories * 1.15).roundTo(places: 1)
+            self.recommendedProtein = ((self.weight as NSString).doubleValue).roundTo(places: 1)
             self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
             self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
         }
