@@ -215,7 +215,7 @@ struct SignUpView: View
         }
         
         else if self.fitnessGoals == "maintainFitness" {
-            self.recommendedCalories = self.maintenanceCalories
+            self.recommendedCalories = (self.maintenanceCalories).roundTo(places: 1)
             self.recommendedProtein = ((self.weight as NSString).doubleValue).roundTo(places: 1)
             self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
             self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
