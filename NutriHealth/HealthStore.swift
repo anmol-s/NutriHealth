@@ -47,7 +47,6 @@ class HealthStore {
     }
     
     func calculateRestingCalories(completion: @escaping (HKStatisticsCollection?) -> Void) {
-        print("in HealthStore calculateRestingCalories")
         let restingCalorieType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)!
         
         let startDate = NSCalendar.current.date(byAdding: .day, value: -7, to: Date())

@@ -23,6 +23,8 @@
 		5570D8DA25ED78EB00FAB456 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570D8D925ED78EB00FAB456 /* HealthStore.swift */; };
 		5570D8DE25ED7C3B00FAB456 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5570D8DD25ED7C3B00FAB456 /* HealthKit.framework */; };
 		5570D8E225ED7FEA00FAB456 /* Calorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570D8E125ED7FEA00FAB456 /* Calorie.swift */; };
+		5570D8FF25FBBA9800FAB456 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570D8FE25FBBA9800FAB456 /* HttpRequest.swift */; };
+		5570D90225FBBAAF00FAB456 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570D90125FBBAAF00FAB456 /* InputView.swift */; };
 		DA33216CB13AA4BF43CF60AF /* Pods_NutriHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F877FB3F2D859EFA539E682 /* Pods_NutriHealth.framework */; };
 		EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */; };
 		EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C1F325CFB9E3001EEB6A /* ContentView.swift */; };
@@ -53,6 +55,8 @@
 		5570D8DC25ED7C3B00FAB456 /* NutriHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NutriHealth.entitlements; sourceTree = "<group>"; };
 		5570D8DD25ED7C3B00FAB456 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		5570D8E125ED7FEA00FAB456 /* Calorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calorie.swift; sourceTree = "<group>"; };
+		5570D8FE25FBBA9800FAB456 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		5570D90125FBBAAF00FAB456 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		81460B03877F28D6EA5DFC55 /* Pods-NutriHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutriHealth.release.xcconfig"; path = "Target Support Files/Pods-NutriHealth/Pods-NutriHealth.release.xcconfig"; sourceTree = "<group>"; };
 		EB57C1EE25CFB9E3001EEB6A /* NutriHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB57C1F125CFB9E3001EEB6A /* NutriHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriHealthApp.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		18D1C2B725DE5C6700CEA370 /* NavBarViews */ = {
 			isa = PBXGroup;
 			children = (
+				5570D90125FBBAAF00FAB456 /* InputView.swift */,
 				183A231925DE3B8E000C9732 /* HomeView.swift */,
 				18D1C2B825DE5CB500CEA370 /* FoodView.swift */,
 				18D1C2BC25DE5CC300CEA370 /* ProfileView.swift */,
@@ -136,6 +141,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5570D8FD25FBBA9800FAB456 /* InputViewContent */ = {
+			isa = PBXGroup;
+			children = (
+				5570D8FE25FBBA9800FAB456 /* HttpRequest.swift */,
+			);
+			path = InputViewContent;
+			sourceTree = "<group>";
+		};
 		EB57C1E525CFB9E3001EEB6A = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,7 @@
 		EB57C1F025CFB9E3001EEB6A /* NutriHealth */ = {
 			isa = PBXGroup;
 			children = (
+				5570D8FD25FBBA9800FAB456 /* InputViewContent */,
 				5570D8E025ED7FD900FAB456 /* Models */,
 				5570D8DC25ED7C3B00FAB456 /* NutriHealth.entitlements */,
 				1841421525E705E600AB96FA /* ProfileViewContent */,
@@ -303,6 +317,7 @@
 				183A231A25DE3B8E000C9732 /* HomeView.swift in Sources */,
 				183A232125DE45EB000C9732 /* MotherView.swift in Sources */,
 				184141C225DF71FB00AB96FA /* RecoRow.swift in Sources */,
+				5570D8FF25FBBA9800FAB456 /* HttpRequest.swift in Sources */,
 				EB6AFA8125EC5E6E009C43A8 /* Calendar.swift in Sources */,
 				1841421725E7067800AB96FA /* GoalsColumn.swift in Sources */,
 				1841421A25E7078E00AB96FA /* GoalsColumnItem.swift in Sources */,
@@ -316,6 +331,7 @@
 				EBA670E925F9F63A0054E726 /* DailyIntakeItems.swift in Sources */,
 				EB57C1F425CFB9E3001EEB6A /* ContentView.swift in Sources */,
 				EB57C1F225CFB9E3001EEB6A /* NutriHealthApp.swift in Sources */,
+				5570D90225FBBAAF00FAB456 /* InputView.swift in Sources */,
 				187683D525F969980002BDF5 /* SignUpView.swift in Sources */,
 				5570D8DA25ED78EB00FAB456 /* HealthStore.swift in Sources */,
 			);

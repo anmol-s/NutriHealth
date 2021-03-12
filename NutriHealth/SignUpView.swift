@@ -89,10 +89,10 @@ struct SignUpView: View
     func createPersonalModel(user: PFUser){
         print("Creating new personal model for \(user.username ?? "test")...")
         
-        //let height:Int = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
         heightConverted = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
         
         self.calculateRecommendations()
+        self.BMIPoundLossRecommendation()
         
         let personalModel = PFObject(className: "PersonalModel")
         personalModel.setObject(user.username!, forKey: "username")
@@ -111,8 +111,6 @@ struct SignUpView: View
         personalModel.setObject(self.recommendedFat, forKey: "recommendedFat")
         personalModel.setObject(self.recommendedCarbs, forKey: "recommendedCarbs")
         personalModel.setObject(user, forKey: "user")
-        
-        self.BMIPoundLossRecommendation()
 
         personalModel.saveInBackground{
             (succeeded: Bool, error: Error?) -> Void in
@@ -175,6 +173,25 @@ struct SignUpView: View
             self.restingMetabolicRate = 655 + weightFactor + heightFactor - ageFactor
         }
         self.maintenanceCalories = self.restingMetabolicRate * activityMultiplier
+        
+        if self.desiredPoundsLoss == "5-10 pounds" {
+            self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.1)).
+            self.recommendedProtein = (self.weight as NSString).doubleValue
+            self.recommendedFat = (self.weight as NSString).doubleValue * 0.4
+            self.recommendedCarbs = (self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4
+        }
+        else if self.desiredPoundsLoss == "15-25 pounds" {
+            self.recommendedCalories = self.maintenanceCalories - (self.maintenanceCalories * 0.15)
+            self.recommendedProtein = (self.weight as NSString).doubleValue * 0.8
+            self.recommendedFat = (self.weight as NSString).doubleValue * 0.4
+            self.recommendedCarbs = (self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4
+        }
+        else { //30+ lbs
+            self.recommendedCalories = self.maintenanceCalories - (self.maintenanceCalories * 0.2)
+            self.recommendedProtein = (self.weight as NSString).doubleValue * 0.6
+            self.recommendedFat = (self.weight as NSString).doubleValue * 0.4
+            self.recommendedCarbs = (self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4
+        }
     }
 }
 
