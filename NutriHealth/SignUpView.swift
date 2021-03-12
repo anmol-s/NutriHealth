@@ -23,6 +23,7 @@ struct SignUpView: View {
     @State var gender: String = ""
     @State var activityLevel: String = ""
     @State var fitnessGoals: String = ""
+    @State var desiredPoundsLoss: String = ""
     @State var restingMetabolicRate: Double = 0.0
     @State var maintenanceCalories: Double = 0.0
     @State var recommendedCalories: Double = 0.0
@@ -44,6 +45,8 @@ struct SignUpView: View {
                     Gender(gender: $gender)
                     ActivityLevels(activityLevel: $activityLevel)
                     FitnessGoals(fitnessGoals: $fitnessGoals)
+                    DesiredPoundsLoss(desiredPoundsLoss: $desiredPoundsLoss)
+                    
                 
                 }
             }
@@ -101,6 +104,7 @@ struct SignUpView: View {
         personalModel.setObject(self.gender, forKey: "gender")
         personalModel.setObject(self.activityLevel, forKey: "activityLevel")
         personalModel.setObject(self.fitnessGoals, forKey: "fitnessGoals")
+        personalModel.setObject(self.desiredPoundsLoss, forKey: "desiredPoundsLoss")
         personalModel.setObject(self.bmi, forKey: "bmi")
         personalModel.setObject(self.restingMetabolicRate, forKey: "restingMetabolicRate")
         personalModel.setObject(self.maintenanceCalories, forKey: "maintenanceCalories")
@@ -329,6 +333,21 @@ struct FitnessGoals: View {
                 Text("Maintain Current Weight While Simultaneously Losing Fat & Building Muscle").tag(goals[1])
                 Text("Maintain Fit Level").tag(goals[2])
                 Text("Gain Weight & Gain Muscle").tag(goals[3])
+            })
+        }
+    }
+}
+
+struct DesiredPoundsLoss: View {
+    @Binding var desiredPoundsLoss:String
+    var poundsOptions: [String] = ["5-10 pounds", "15-25 pounds", "30+"]
+    var body: some View {
+        Group{
+            Text("If you chose the “Lose Weight & Gain Muscle” option above, how much pounds would you like to lose?").padding(.leading)
+            Picker("Select Desired Pounds Loss", selection: $desiredPoundsLoss, content: {
+                Text("5-10 pounds").tag(poundsOptions[0])
+                Text("15-25 pounds").tag(poundsOptions[1])
+                Text("30+ pounds").tag(poundsOptions[2])
             })
         }
     }
