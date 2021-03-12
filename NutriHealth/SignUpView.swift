@@ -141,12 +141,11 @@ struct SignUpView: View
     func BMIPoundLossRecommendation(to Value: String) // THIS NEEDS TO BE DISPLAYED IN BETWEEN "ACTIVE" & "FITNESS GOALS"
     {
         heightConverted = ((self.heightft as NSString).integerValue * 12) + (self.heightin as NSString).integerValue
-        self.bmi = (self.weight as NSString).doubleValue / Double(self.heightConverted) / Double(self.heightConverted) * 703
-        
-        if self.bmi < 18.5
+        self.bmi = ((self.weight as NSString).doubleValue / Double(self.heightConverted) / Double(self.heightConverted) * 703).roundTo(places: 1)
+
         {
             self.recoMsg = "You have an UNDERWEIGHT weight status. You are recommended to GAIN weight."
-            print("You have an UNDERWEIGHT weight status. You are recommended to GAIN weight.")
+            print("You have an UNDERWEIGHT weight status. You are recommended to GAIN weight."
         }
         else if (self.bmi >= 18.5) && (self.bmi < 25)
         {
@@ -196,21 +195,21 @@ struct SignUpView: View
         
         if self.desiredPoundsLoss == "5-10 pounds" {
             self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.1))
-            self.recommendedProtein = (self.weight as NSString).doubleValue
-            self.recommendedFat = (self.weight as NSString).doubleValue * 0.4
-            self.recommendedCarbs = (self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4
-        }
+            self.recommendedCalories = self.maintenanceCalories - (self.maintenanceCalories * 0.1).roundTo(places: 1)
+            self.recommendedProtein = ((self.weight as NSString).doubleValue).roundTo(places: 1)
+            self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
+            self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
         else if self.desiredPoundsLoss == "15-25 pounds" {
-            self.recommendedCalories = self.maintenanceCalories - (self.maintenanceCalories * 0.15)
-            self.recommendedProtein = (self.weight as NSString).doubleValue * 0.8
-            self.recommendedFat = (self.weight as NSString).doubleValue * 0.4
-            self.recommendedCarbs = (self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4
+            self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.15)).roundTo(places: 1)
+            self.recommendedProtein = ((self.weight as NSString).doubleValue * 0.8).roundTo(places: 1)
+            self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
+            self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
         }
         else { //30+ lbs
-            self.recommendedCalories = self.maintenanceCalories - (self.maintenanceCalories * 0.2)
-            self.recommendedProtein = (self.weight as NSString).doubleValue * 0.6
-            self.recommendedFat = (self.weight as NSString).doubleValue * 0.4
-            self.recommendedCarbs = (self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4
+            self.recommendedCalories = (self.maintenanceCalories - (self.maintenanceCalories * 0.2)).roundTo(places: 1)
+            self.recommendedProtein = ((self.weight as NSString).doubleValue * 0.6).roundTo(places: 1)
+            self.recommendedFat = ((self.weight as NSString).doubleValue * 0.4).roundTo(places: 1)
+            self.recommendedCarbs = ((self.recommendedCalories - (self.recommendedProtein * 4) + (self.recommendedFat * 9)) / 4).roundTo(places: 1)
         }
     }
 }
@@ -411,6 +410,7 @@ struct DesiredPoundsLoss: View {
     }
 }
 
+
 extension Binding {
     func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
         Binding(
@@ -422,3 +422,12 @@ extension Binding {
         )
     }
 }
+
+extension Double {
+    func roundTo(places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
+

@@ -17,16 +17,16 @@ struct foods : Codable {
         let serving_unit : String
         let serving_weight_grams : Int
         let nf_calories : Float
-        let nf_total_fat : Float
-        let nf_saturated_fat : Float
-        let nf_cholesterol : Float
-        let nf_sodium : Float
-        let nf_dietary_fiber : Float
-        let nf_total_carbohydrate : Float
-        let nf_sugars : Float
-        let nf_protein : Float
-        let nf_potassium : Float
-        let nf_p : Float
+        let nf_total_fat : Float?
+        let nf_saturated_fat : Float?
+        let nf_cholesterol : Float?
+        let nf_sodium : Float?
+        let nf_dietary_fiber : Float?
+        let nf_total_carbohydrate : Float?
+        let nf_sugars : Float?
+        let nf_protein : Float?
+        let nf_potassium : Float?
+        let nf_p : Float?
         let full_nutrients : [full_nutrients]
         let photo : photo
         }
