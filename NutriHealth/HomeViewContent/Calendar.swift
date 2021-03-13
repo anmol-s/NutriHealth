@@ -14,6 +14,7 @@ struct Calendar: View
     var body: some View
     {
         CalendarView()
+            .frame(height: 200.0)
     }
 }
 
