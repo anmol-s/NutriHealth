@@ -49,39 +49,3 @@ struct RecoRow_Previews: PreviewProvider
         RecoRow()
     }
 }
-
-
-//struct RecoRow: View {
-//    var items: [String]
-//    var body: some View
-//    {
-//        VStack(alignment: .leading)
-//        {
-//            Text("Recommendations")
-//                .font(.headline)
-//                .padding(.leading, 15)
-//                .padding(.top, 5)
-//
-//            ScrollView(.horizontal, showsIndicators: false)
-//            {
-//                HStack(alignment: .top, spacing: 0)
-//                {
-//                    //TODO: Add reco item file and loop here
-//
-//                    //TODO: Test data Remove after adding above
-//                    Text("Reco1 ")
-//                    Text("Reco2 ")
-//                    Text("Reco3 ")
-//                    Text("Reco4 ")
-//                }.font(.system(size: 15.0)).padding()
-//            }
-//        }
-//    }
-//}
-//
-//struct RecoRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        //TODO: add data from db here
-//        RecoRow(items: ["Reco1", "Reco2"])
-//    }
-//}
