@@ -21,7 +21,7 @@ struct RecoRow: View
     {
         VStack(alignment: .leading)
         {
-            Text("Recommendations")
+            Text("General Recommendations")
                 .font(.custom("AppleSDGothicNeo-Bold", size: 25))
                 .padding(.leading, 15)
                 .padding(.top, 5)

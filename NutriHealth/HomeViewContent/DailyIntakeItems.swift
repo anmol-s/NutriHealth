@@ -30,11 +30,11 @@ struct DailyIntakeItems: View
             HStack
             {
                 Text("Recommended").font(.subheadline)
-                                   .foregroundColor(.secondary)
+                                   .foregroundColor(.blue)
                 Spacer()
                 Text(IntakeRec)
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.blue)
             }
         }//.padding()
     }

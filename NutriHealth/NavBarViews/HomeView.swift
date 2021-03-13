@@ -43,11 +43,12 @@ struct HomeView: View {
                 .foregroundColor(.blue)
                 .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
             Text("Dashboard").font(.system(size: 18)).fontWeight(.semibold).offset(y:-41)
-            CalendarView().offset(y:-48) // This calendar always has a full-size calendar frame. Doesn't matter if you change it to week, month, etc. People complained but nothing we can do.
-            RecoRow().offset(y:-180)
+            CalendarView().offset(y:-48)
+                .frame(maxHeight: .infinity)
+            // This calendar always has a full-size calendar frame. Doesn't matter if you change it to week, month, etc. People complained but nothing we can do.
+            RecoRow().offset(y:-190)
             DailyIntakeColumn().offset(y:-180)
             Spacer()
-            
             // display calories expended from Apple Health data
             
             
@@ -59,7 +60,6 @@ struct HomeView: View {
 //                }
 //            }
 // ----- I THINK THIS JUST PUT HERE AS A TEST. NOT SURE WE NEED THIS FOR DISPLAY -----
-            
         }
         .edgesIgnoringSafeArea(.top)
         .onAppear {

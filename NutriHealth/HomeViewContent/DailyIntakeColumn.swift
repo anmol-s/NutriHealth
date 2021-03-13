@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import Parse
 //Refer for backend and frontend: https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces
 
 struct DailyIntakeColumn: View
 {
+    @State var CalorieIntakeRec: Double = 0.0
+    @State var ProteinIntakeRec: Int = 0
+    @State var CarbIntakeRec: Double = 0.0
+    @State var FatIntakeRec: Int = 0
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
@@ -18,22 +23,26 @@ struct DailyIntakeColumn: View
     
     var body: some View
     {
-        NavigationView
+       VStack(alignment: .leading)
         {
+            Text("Daily Calories & Nutrition")
+                .font(.custom("AppleSDGothicNeo-Bold", size: 25))
+                .padding(.leading, 15)
+                .padding(.top, 5)
             List
             {
                 Group
                 {
-                    DailyIntakeItems(IntakeName: "Calories", IntakeValue: "11", IntakeRec: "2000")
+                    DailyIntakeItems(IntakeName: "Calories", IntakeValue: "11", IntakeRec: "\(CalorieIntakeRec)")
                 }
                 
                 Section(header: Text("Macronutrients"))
                 {
                     Group
                     {
-                        DailyIntakeItems(IntakeName: "Total Fat (g)", IntakeValue: "22", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Carbohydrates (g)", IntakeValue: "33", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Protein", IntakeValue: "44", IntakeRec: "2000")
+                        DailyIntakeItems(IntakeName: "Total Fat (g)", IntakeValue: "22", IntakeRec: "\(FatIntakeRec)")
+                        DailyIntakeItems(IntakeName: "Carbohydrates (g)", IntakeValue: "33", IntakeRec: "\(CarbIntakeRec)")
+                        DailyIntakeItems(IntakeName: "Protein", IntakeValue: "44", IntakeRec: "\(ProteinIntakeRec)")
                     }
                 }
                    
@@ -73,8 +82,29 @@ struct DailyIntakeColumn: View
                         DailyIntakeItems(IntakeName: "Folate (mcg DFE)", IntakeValue: "230", IntakeRec: "2000")
                     }
                 }
-            }.navigationTitle("Daily Calories & Nutrition") // list
+            }.frame(maxHeight: .infinity)//.navigationTitle("Daily Calories & Nutrition") // list
         } // navigation view
+        .onAppear(){
+            let query = PFQuery(className:"PersonalModel")
+            query.whereKey("user", equalTo:PFUser.current())
+            query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+                if let error = error {
+                    // Log details of the failure
+                    print(error.localizedDescription)
+                } else if let objects = objects {
+                    // The find succeeded.
+                    print("Successfully retrieved \(objects.count) scores.")
+                    // Do something with the found objects
+                    for object in objects {
+                        print(object.objectId as Any)
+                        self.CalorieIntakeRec = object["recommendedCalories"] as! Double
+                        self.CarbIntakeRec = object["recommendedCarbs"] as! Double
+                        self.ProteinIntakeRec = object["recommendedProtein"] as! Int
+                        self.FatIntakeRec = object["recommendedFat"] as! Int
+                    }
+                }
+            }
+        }
     }
 }
 

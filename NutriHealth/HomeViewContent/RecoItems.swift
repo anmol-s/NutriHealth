@@ -29,7 +29,7 @@ struct RecoItems: View
                             .fill(Color.blue)
                     )
             }
-        }
+        }.padding(.leading)
     }
 }
 

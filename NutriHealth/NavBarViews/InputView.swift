@@ -84,7 +84,7 @@ var body: some View
                 .accentColor(Color.white)
                 .padding(.vertical, 10)
                 .background(Color.blue)
-                .cornerRadius(5)
+                .cornerRadius(30)
                 .padding(.horizontal, 40)
 
             }
