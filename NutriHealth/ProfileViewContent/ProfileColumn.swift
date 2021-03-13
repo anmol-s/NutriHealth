@@ -20,7 +20,7 @@ struct ProfileColumn: View {
             GoalsColumnItem(goalName: "Age", goalValue: age)
             GoalsColumnItem(goalName: "Gender", goalValue: gender)
             GoalsColumnItem(goalName: "Weight", goalValue: "\(weight) lbs")
-            GoalsColumnItem(goalName: "Height", goalValue: "\(height) cm")
+            GoalsColumnItem(goalName: "Height", goalValue: "\(height) in")
             GoalsColumnItem(goalName: "Activity Level", goalValue: activity)
         }
         .onAppear(){
