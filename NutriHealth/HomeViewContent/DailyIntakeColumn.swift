@@ -33,16 +33,16 @@ struct DailyIntakeColumn: View
             {
                 Group
                 {
-                    DailyIntakeItems(IntakeName: "Calories", IntakeValue: "11", IntakeRec: "\(CalorieIntakeRec)")
+                    DailyIntakeItems(IntakeName: "Calories", IntakeValue: "0", IntakeRec: "\(CalorieIntakeRec)")
                 }
                 
                 Section(header: Text("Macronutrients"))
                 {
                     Group
                     {
-                        DailyIntakeItems(IntakeName: "Total Fat (g)", IntakeValue: "22", IntakeRec: "\(FatIntakeRec)")
-                        DailyIntakeItems(IntakeName: "Carbohydrates (g)", IntakeValue: "33", IntakeRec: "\(CarbIntakeRec)")
-                        DailyIntakeItems(IntakeName: "Protein", IntakeValue: "44", IntakeRec: "\(ProteinIntakeRec)")
+                        DailyIntakeItems(IntakeName: "Total Fat (g)", IntakeValue: "0", IntakeRec: "\(FatIntakeRec)")
+                        DailyIntakeItems(IntakeName: "Carbohydrates (g)", IntakeValue: "0", IntakeRec: "\(CarbIntakeRec)")
+                        DailyIntakeItems(IntakeName: "Protein", IntakeValue: "0", IntakeRec: "\(ProteinIntakeRec)")
                     }
                 }
                    
@@ -50,13 +50,13 @@ struct DailyIntakeColumn: View
                 {
                     Group
                     {
-                    DailyIntakeItems(IntakeName: "Calcium (mg)", IntakeValue: "55", IntakeRec: "2000")
-                    DailyIntakeItems(IntakeName: "Iron (mg)", IntakeValue: "66", IntakeRec: "2000")
-                    DailyIntakeItems(IntakeName: "Magnesium (mg)", IntakeValue: "77", IntakeRec: "2000")
-                    DailyIntakeItems(IntakeName: "Phosphorus (mg)", IntakeValue: "88", IntakeRec: "2000")
-                    DailyIntakeItems(IntakeName: "Potassium (mg)", IntakeValue: "99", IntakeRec: "2000")
-                    DailyIntakeItems(IntakeName: "Sodium (mg)", IntakeValue: "100", IntakeRec: "2000")
-                    DailyIntakeItems(IntakeName: "Zinc (mg)", IntakeValue: "110", IntakeRec: "2000")
+                    DailyIntakeItems(IntakeName: "Calcium (mg)", IntakeValue: "0", IntakeRec: "1000")
+                    DailyIntakeItems(IntakeName: "Iron (mg)", IntakeValue: "0", IntakeRec: "8")
+                    DailyIntakeItems(IntakeName: "Magnesium (mg)", IntakeValue: "0", IntakeRec: "400")
+                    DailyIntakeItems(IntakeName: "Phosphorus (mg)", IntakeValue: "0", IntakeRec: "700")
+                    DailyIntakeItems(IntakeName: "Potassium (mg)", IntakeValue: "0", IntakeRec: "3400")
+                    DailyIntakeItems(IntakeName: "Sodium (mg)", IntakeValue: "0", IntakeRec: "2300")
+                    DailyIntakeItems(IntakeName: "Zinc (mg)", IntakeValue: "0", IntakeRec: "11")
                     }
                 }
     
@@ -64,22 +64,22 @@ struct DailyIntakeColumn: View
                 {
                     Group
                     {
-                        DailyIntakeItems(IntakeName: "Vitamin A (mcg RAE)", IntakeValue: "120", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Vitamin E (mg AT)", IntakeValue: "130", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Vitamin D (IU)", IntakeValue: "140", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Vitamin C (mg)", IntakeValue: "150", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Thiamin (mg)", IntakeValue: "160", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Riboflavin (mg)", IntakeValue: "170", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Niacin (mg)", IntakeValue: "180", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Vitamin B-6 (mg)", IntakeValue: "190", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Vitamin B-12 (mcg)", IntakeValue: "200", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Choline (mg)", IntakeValue: "210", IntakeRec: "2000")
+                        DailyIntakeItems(IntakeName: "Vitamin A (mcg RAE)", IntakeValue: "0", IntakeRec: "900")
+                        DailyIntakeItems(IntakeName: "Vitamin E (mg AT)", IntakeValue: "0", IntakeRec: "15")
+                        DailyIntakeItems(IntakeName: "Vitamin D (IU)", IntakeValue: "0", IntakeRec: "600")
+                        DailyIntakeItems(IntakeName: "Vitamin C (mg)", IntakeValue: "0", IntakeRec: "90")
+                        DailyIntakeItems(IntakeName: "Thiamin (mg)", IntakeValue: "0", IntakeRec: "1.2")
+                        DailyIntakeItems(IntakeName: "Riboflavin (mg)", IntakeValue: "0", IntakeRec: "1.3")
+                        DailyIntakeItems(IntakeName: "Niacin (mg)", IntakeValue: "0", IntakeRec: "16")
+                        DailyIntakeItems(IntakeName: "Vitamin B-6 (mg)", IntakeValue: "0", IntakeRec: "1.3")
+                        DailyIntakeItems(IntakeName: "Vitamin B-12 (mcg)", IntakeValue: "0", IntakeRec: "2.4")
+                        DailyIntakeItems(IntakeName: "Choline (mg)", IntakeValue: "0", IntakeRec: "550")
                     }
     
                     Group
                     {
-                        DailyIntakeItems(IntakeName: "Vitamin K (mcg)", IntakeValue: "220", IntakeRec: "2000")
-                        DailyIntakeItems(IntakeName: "Folate (mcg DFE)", IntakeValue: "230", IntakeRec: "2000")
+                        DailyIntakeItems(IntakeName: "Vitamin K (mcg)", IntakeValue: "0", IntakeRec: "120")
+                        DailyIntakeItems(IntakeName: "Folate (mcg DFE)", IntakeValue: "0", IntakeRec: "400")
                     }
                 }
             }.frame(maxHeight: .infinity)//.navigationTitle("Daily Calories & Nutrition") // list
