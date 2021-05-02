@@ -1,3 +1,5 @@
+![dumbbell](https://user-images.githubusercontent.com/36181067/116805859-22e7a480-aade-11eb-9623-8df9feb02211.png)
+
 # NutriHealth
 
 ## Running the app
