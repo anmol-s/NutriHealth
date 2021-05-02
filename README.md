@@ -1,10 +1,3 @@
-
-<p align="center">
-![Hnet com-image](https://user-images.githubusercontent.com/36181067/116806078-8aeaba80-aadf-11eb-9263-d81424c98bdd.png)
-</p>
-
-<img align="center" src="https://user-images.githubusercontent.com/36181067/116806078-8aeaba80-aadf-11eb-9263-d81424c98bdd.png">
-
 # NutriHealth
 
 ## Running the app
